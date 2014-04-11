@@ -1,0 +1,2085 @@
+﻿     
+<!DOCTYPE html>
+<html id="n">
+   <head>
+        <meta charset="UTF-8" />
+        <title>Создание лота</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="prefetch" href="http://static.24au.ru/i/e.png?v=138" />
+		<meta name="viewport" content="width=1024, user-scalable=yes" />
+        <link href="http://static.24au.ru/css/24au.css?v=138" rel="stylesheet" type="text/css" media="screen,tv,projection,print" />
+        
+        <link href="http://static.24au.ru/css/24au-lotcreate.css?v=138" rel="stylesheet" type="text/css" />
+
+
+       <link href="http://static.24au.ru/css/24au-simple.css?v=138" rel="stylesheet" type="text/css" media="screen,tv,projection,print" />
+
+        <!--[if lt IE 8]><link href="http://static.24au.ru/css/24au-ie.css?v=138" rel="stylesheet" media="screen,tv,projection,print" /><![endif]-->
+
+        <script type="text/JavaScript">
+            var SiteSettings = {
+                Domain: "24au.ru",
+                AuctionDomain: "http://krsk.24au.ru",
+                ForumDomain: "http://forum.24au.ru",
+                CommonDomain: "http://common.24au.ru",
+                HelpDomain: "http://help.24au.ru",
+                AdminDomain: "http://admin.24au.ru",
+                PeopleDomain: "http://people.24au.ru",
+                StaticDomain: "http://static.24au.ru",
+                CurrRegionId: parseInt("464"),
+                ServerTime: new Date(2014, 2, 5, 6, 20, 52)
+            };
+        </script>
+        <script type="text/javascript">document.documentElement.id = 'j';</script>
+        <script src="http://static.24au.ru/Scripts/Utils.Debug.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/jquery-1.8.3.min.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/Utils.Api.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/modernizr.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/placeholder.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/jquery.easing.js?v=138" type="text/javascript"></script>
+  
+        <script src="http://static.24au.ru/Scripts/jquery.tmpl.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/jquery.unobtrusive-ajax.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/Utils.UI.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/Utils.Control.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/Utils.Data.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/Utils.User.js?v=138" type="text/javascript"></script>
+        <script src="http://static.24au.ru/Scripts/Utils.Refresher.js?v=138" type="text/javascript"></script>
+       
+
+        <script src="http://static.24au.ru/Scripts/Utils.Lotcreate.js?v=138" type="text/javascript"></script>
+<script src="http://upload.24au.ru/socket.io/socket.io.js" type="text/javascript"></script>
+<script src="http://static.24au.ru/Scripts/Utils.Auction.js?v=138" type="text/javascript"></script>
+
+            
+
+
+        <link href="http://static.24au.ru/i/favicon.ico?v=138" type="image/x-icon" rel="shortcut icon" />
+
+            <link href="http://static.24au.ru/i/apple-touch-icon-120.png?v=138" rel="image_src" />
+
+       <link href="http://static.24au.ru/i/apple-touch-icon-152.png?v=138" rel="apple-touch-icon-precomposed" />
+
+
+        <meta name="description" content="Городские интернет-аукционы 24au.ru - сайт для покупки, продажи, обмена товаров. Купить, продать и поговорить - успешные и интересные торги в нашем городе." />
+        <meta name="keywords" content="24AU.RU - Интернет-Аукцион + Тендер, аукцион, Красноярск, покупка, продажа, обмен, объявления, торги, тендеры, лоты. Продажа автомобилей, телефонов, одежды, окна, кондиционеры, компьютеры." />
+
+        
+    </head>
+    <body>
+        <div class="sfw">
+            
+            <div class="page-min-width">
+            <div class="page-margin">
+
+                
+                
+                
+<div id="siteheader" class="siteheader clearfix relpos">
+    <div class="page-left-col floatleft">
+        <div class="siteheader-logo relpos">
+            
+<a class="logo" href="http://krsk.24au.ru/">
+    
+    <img class="logo-img" alt="24au.ru" src="http://static.24au.ru/i/24au-logo.png?v=138" />
+    <span class="logo-date">вт, 4 марта
+        <script>
+            document.write(SiteSettings.ServerTime.getHours() > 9 ? "" : "0", SiteSettings.ServerTime.getHours(), ":", SiteSettings.ServerTime.getMinutes() > 9 ? "" : "0", SiteSettings.ServerTime.getMinutes())
+        </script>
+    </span>
+</a>
+            
+
+    <div class="siteheader-city">    <span class="siteheader-title">Аукцион</span>
+    <a id="city-select-button" class="siteheader-city-button drop-down-button button">
+          Красноярск
+        <span class="drop-down-arrow"></span>
+    </a>
+</div> 
+
+        </div> 
+    </div> 
+
+    
+    
+
+    <div class="page-right-col floatleft">
+        <div class="page-right-col-gap relpos">
+            
+            <div class="siteheader-menu">
+                
+
+  
+<div class="siteheader-menu-right-align">
+    <nav class="main-menu siteheader-main-menu clearfix">
+        <a class="main-menu-item main-menu-item-active" href="http://krsk.24au.ru/auction/">Аукцион</a>
+        <a class="main-menu-item" href="http://24au.ru/markets/">Витрина</a>
+        <a class="main-menu-item" href="http://krsk.24au.ru/tenders/">Тендер</a>
+        <a class="main-menu-item " href="http://forum.24au.ru/">Форум</a>
+        <a class="main-menu-item" href="http://help.24au.ru/help/rules/">Правила</a>
+        
+        <a class="main-menu-item" href="http://help.24au.ru/">Помощь</a>        
+    </nav> 
+
+    <div class="site-search-form-wrap">
+        <form class="site-search-form simple-search nospacer" method="get" action="http://common.24au.ru/search/" >
+            <span class="site-search-form-text-column layouter">
+                <span class="site-search-form-text-wrap text-field-wrap">
+                    <span class="relpos block">
+                        <input autocomplete="off" class="lotsfilter-text-field text-field" data-default-value="" id="find_str_top_search" name="SearchText" placeholder="Поиск" type="text" value="" />
+                                <div id="menuSearchTipVariants" class="search-tip-listbox nodisplay " data-id-input="find_str_top_search" data-id-category="0"></div>
+
+                    </span>
+                </span>
+            </span>
+            <div class="site-search-form-select-column combobox-wrap layouter" onmouseover="Utils.UI.FillListCategories()" onclick="Utils.UI.FillListCategories()">
+                <select class="combobox-over-select combobox" id="categories_list" name="SearchCategory">
+                    <option value="Default" data-id-category="0" selected="selected">Во всех разделах</option>
+                    <option value="User" data-id-category="-1">Поиск пользователя</option>
+                    <option value="LotId" data-id-category="-1">Поиск по номеру лота</option>
+                    <option value="TenderId" data-id-category="-1">Поиск по номеру тендера</option>
+                </select>
+            </div>
+            <span class="simple-search-sumbit-wrap layouter">
+                <input class="simple-search-button button lined-button" type="submit" value="Найти" />
+            </span>
+
+             <script type="text/javascript">
+                 Utils.UI.menuSearchTip();
+             </script>
+
+        </form>
+ 
+        <input id="fill" type="hidden" value="0" />
+    </div>
+
+</div> 
+
+            </div> 
+        </div> 
+    </div>
+
+</div> 
+                
+                <script>
+                    $('#find_str_top_search').val('');
+                </script>
+
+                <div class="main-toolbar">
+                    <div id="stickytopbar">
+                        <div class="toolbar clearfix">
+    <div class="page-left-col floatleft">
+        <div class="page-left-col-abs">
+            <div class="toolbar-left-padding">
+                <div id="toolbar-logo-cnt">
+                    
+                            <div id="toolbar-create-block">
+                    
+                        <a id="create-lot-big-button" class="create-lot-big-button" href="http://24au.ru/new/">
+                            <span class="create-lot-big-button-text"><i class="create-lot-big-icon"></i> Создать лот</span>
+                        </a>
+
+                        <div class="toolbar-simple-drop-down-create toggler-container toggler-container-pos nodisplay">
+                        
+                            <div class="toolbar-simple-drop-down sub-toolbar">
+                                <a href="http://24au.ru/new/" class="toolbar-simple-drop-down-link toolbar-link">Новый лот</a>
+                                <a href="http://24au.ru/new/advertnew/" class="toolbar-simple-drop-down-link toolbar-link">Новое объявление</a>
+                                    <a href="http://24au.ru/edittender/" class="toolbar-simple-drop-down-link toolbar-link">Новый тендер</a>
+                                <a href="http://forum.24au.ru/topic/new/" class="toolbar-simple-drop-down-link toolbar-link">Тему на форуме</a>
+                                <a href="http://24au.ru/link/?action=editlink" class="toolbar-simple-drop-down-link toolbar-link">Рекламную ссылку</a>
+                                
+                                
+                                
+                                
+
+                                
+                                
+                                
+
+                            </div>
+                    
+                        </div> 
+
+                    </div> 
+
+                    <script>
+                        Utils.UI.theTogglers.makeOveredToggler($('#toolbar-create-block'));
+                    </script>
+                    
+                    <a class="toolbar-logo" title="На главную" href="http://krsk.24au.ru/"></a>
+
+                </div> 
+                <span class="toolbar-in-border"></span>
+            </div> 
+        </div> 
+        <div class="page-left-col-fill"></div>
+    </div> 
+    <div class="page-right-col floatleft">
+
+    <div class="clearfix">
+
+      <div class="toolbar-activity-ideograms-column nospacer">
+        
+        <div class="toolbar-activity-ideogram-conatainer layouter">
+        
+            <a class="toolbar-activity-ideogram toolbar-link-number" href="http://24au.ru/messagesprivate/" title="Личные сообщения">
+                 
+                <span class="toolbar-activity-ideogram-cnt">
+                    
+                     <span class="toolbar-activity-ideogram-pse-text">ЛС</span>
+                     <span class="toolbar-activity-ideogram-pic-cnt">
+                         <img src="http://static.24au.ru/i/toolbar-ideograms.png?v=138" class="toolbar-activity-ideogram-pic toolbar-messages-ideogram-pic" alt="" />
+                    </span>
+                    
+                 
+                 </span>
+
+            </a>
+        
+        </div>
+        
+        <div class="toolbar-activity-ideogram-conatainer toggler-control toggler-control-over layouter">
+        
+            <a class="toolbar-activity-ideogram toolbar-link-number" href="http://24au.ru/user/me/lots/favorite/">
+            
+                <span class="toolbar-activity-ideogram-cnt">
+                    <span class="toolbar-activity-ideogram-pse-text">Из</span>
+                    <span class="toolbar-activity-ideogram-pic-cnt">
+                    <img src="http://static.24au.ru/i/toolbar-ideograms.png?v=138" class="toolbar-activity-ideogram-pic toolbar-favorites-ideogram-pic" alt="" />
+                    </span>
+                </span>
+        
+            </a>
+        
+            
+            <div class="toolbar-activity-ideogram-drop-down toggler-container toggler-container-pos nodisplay">
+            <div class="toolbar-simple-drop-down toolbar-simple-drop-down-ideogram sub-toolbar">
+              <a href="http://24au.ru/user/me/lots/favorite/" class="toolbar-simple-drop-down-link toolbar-link">Избранные лоты</a>
+              <a href="http://24au.ru/user/me/tenders/favorite/" class="toolbar-simple-drop-down-link toolbar-link">Избранные тендеры</a>
+              <a href="http://24au.ru/userFavouriteProUser/" class="toolbar-simple-drop-down-link toolbar-link">Избранные продавцы</a>
+              <a href="http://24au.ru/userfavouritetopic/" class="toolbar-simple-drop-down-link toolbar-link">Избранные темы</a>
+            </div>        
+            </div>
+        
+        </div>
+        <div class="toolbar-activity-ideogram-conatainer layouter">
+            
+            <a class="toolbar-activity-ideogram toolbar-link-number" href="http://24au.ru/messages/auto/" title="Уведомления">
+                
+                 <span class="toolbar-activity-ideogram-cnt">
+                     <span class="toolbar-activity-ideogram-pse-text">Ув</span>
+                     <span class="toolbar-activity-ideogram-pic-cnt">
+                         <img src="http://static.24au.ru/i/toolbar-ideograms.png?v=138" class="toolbar-activity-ideogram-pic toolbar-deals-ideogram-pic" alt="" />
+                     </span>
+                     
+                 
+                 </span>
+            
+            </a>     
+        
+        </div>
+
+        <span class="toolbar-in-border"></span>
+
+      </div>
+      
+      <div class="toolbar-my-things-column nospacer">
+
+        <div class="toolbar-my-thing layouter">
+        <a class="toolbar-link" href="http://24au.ru/user/me/lots/">Мои лоты</a>
+        </div>
+        
+        <div class="toolbar-my-thing layouter">
+        <a class="toolbar-link" href="http://24au.ru/user/me/lots/abids/">Мои торги</a>
+        </div>
+        
+        <div class="toolbar-my-thing layouter toggler-control toggler-control-over">
+                <a class="toolbar-link" href="http://24au.ru/user/me/tenders/">Мои тендеры</a>
+                <div class="toolbar-my-thing-drop-down toggler-container toggler-container-pos nodisplay">
+                    <div class="toolbar-simple-drop-down sub-toolbar">
+                      <a href="http://24au.ru/user/me/tenders/aoffers/" class="toolbar-simple-drop-down-link toolbar-link">Мои предложения</a>
+                    </div>
+                </div>
+        </div>
+        
+
+      </div>
+      
+      <div class="toolbar-logout-column layouter">
+          <div class="toolbar-right-padding">
+              <a class="toolbar-link" id="logoutButton" href="http://common.24au.ru/logout/?returnUrl=http%3A%2F%2F24au.ru">Выход</a>
+              <script>
+                  (function () {
+                      var node = $("#logoutButton");
+                      node.attr("href", "http://common.24au.ru/logout/" + "?returnUrl=" + encodeURIComponent(window.location));
+                  })();
+              </script>
+          </div>
+          <span class="toolbar-in-border"></span>
+      </div>
+           
+      <div class="toolbar-human-column">
+          
+        <div class="toolbar-balance-column">
+        <a class="toolbar-balance-link" href="http://24au.ru/profile/bonus/">Баланс: <span id="toolbar-balance-value" class="toolbar-balance-link-value" data-update-value="balance">39,69</span>&nbsp;руб.</a>
+        </div>              
+          
+
+            <div class="toolbar-human-portrait human-image-link">
+              <img class="human-image" alt="poolsar" src="http://static.24au.ru/i/user-man-32x32.jpg?v=138" />  
+              <div class="toolbar-human-portrait-activity nospacer">
+                  <span class="toolbar-human-portrait-number layouter"></span>
+                      <a class="toolbar-human-portrait-number toolbar-link-number layouter" href="http://24au.ru/reviews/?rate=none" title="Сделки без оценки">
+                        <span class="toolbar-number"><span class="toolbar-number-text">10</span></span>
+                      </a>
+              </div>
+            </div>
+  
+
+        <div class="toolbar-human-information">
+
+          <a class="toolbar-human-name deepblue" href="http://24au.ru/user/poolsar/">poolsar</a>
+
+          <a class="toolbar-human-rating toolbar-human-green" href="http://24au.ru/reviews/poolsar/">11</a>
+
+          <div class="toolbar-human-pro">
+                    
+                    <a href="http://24au.ru/profile/phone/" title="подтвердить номер телефона"><span class="human-badge human-badge-tel-gray mr2"></span></a>
+
+                    <span class="human-badge human-badge-pro-inactive"></span>
+                    <a class="toolbar-mini-link toolbar-white-link toolbar-topro-link" href="http://24au.ru/profile/pro/">Активировать</a>
+          </div>
+
+        </div>
+
+        <span class="toolbar-in-border"></span>
+        
+      </div>
+
+    </div>
+    </div> 
+
+</div> 
+                  
+
+                        
+
+                       
+                    </div>
+
+                    <script>
+
+                        (function () {
+
+                            Utils.UI.stickytopbar = new Utils.UI.stickytopbar();
+                            Utils.UI.stickytopbar.init({
+                                barNode: $('#stickytopbar')
+                            })
+
+                            Utils.Refresher.Add("Toolbar", "/commonblocks/Toolbar/", $('#stickytopbar'));
+
+                        })();
+
+                    </script>
+
+                </div>
+                
+            </div>
+            
+            </div>
+            
+        
+            
+
+
+
+
+<div class="sfc page-min-width">
+<div class="page-margin">
+    
+    
+
+
+
+    
+    
+    
+<div class="mb18 nospacer">
+      
+    
+      
+    <div class="form-column-left layouter">
+        <div class="form-column-gap">
+            <label class="form-text-title-large">Создать —</label>
+        </div>
+    </div> 
+    
+    
+    
+    
+    <div class="form-column-center-right layouter">
+
+        <div id="lotc-type-select-cnt" class="lotc-type-select-cnt-lot">
+            <div class="lotc-type-select-cnt">  
+
+                <div class="lotc-type-select-item lotc-type-select-item-lot lotc-type-select-item-active" >
+                    <div class="lotc-type-select-hdr">Лот</div>
+                    <div class="lotc-type-select-desc">Информация о товаре, выставленном на торги. <a class="ltsd-link" href="http://help.24au.ru/help/7/" target="_blank">Подробнее</a></div>
+                    <div class="lotc-type-select-brd"><div class="lotc-type-select-arrow"></div></div>
+                </div>
+
+                <div class="lotc-type-select-item " data-url=/new/AdvertNew/>
+                    <div class="lotc-type-select-hdr">Объявление</div>
+                    <div class="lotc-type-select-desc">Реклама услуг или группы товаров. Только платное размещение. <a class="ltsd-link" href="http://help.24au.ru/help/18/" target="_blank">Подробнее</a></div>
+                    <div class="lotc-type-select-brd"></div>
+                </div> 
+
+                <div class="lotc-type-select-item " data-url=http://24au.ru/edittender/>
+                    <div class="lotc-type-select-hdr">Тендер</div>
+                    <div class="lotc-type-select-desc">Заказ товара или услуги, которых сейчас нет в активных предложениях. <a class="ltsd-link" href="http://help.24au.ru/help/19/" target="_blank">Подробнее</a></div>
+                    <div class="lotc-type-select-brd"></div>
+                </div>          
+
+            </div>
+        </div>
+
+        <script>Utils.Lotcreate.LotTypeSelectLinks()</script>
+
+    </div>
+     
+</div>
+
+   
+
+    <form method="POST" id="lotc-form" action="/new/">
+    
+        
+
+
+
+
+<div class="sform-row nospacer">
+
+    <div class="form-column-left layouter">
+        
+                <div class="form-column-gap">
+                    <label class="form-text-title">Название лота</label>
+                </div>
+                <div class="form-text-remark form-remark-under-label">
+                    Что продаем?
+                </div> 
+        
+    </div> 
+    
+    <div class="form-column-center-right layouter">
+
+        
+        <div class="pad-panel pp-offs gray95-bkg">
+            <div id="lotc-search-ctg-field-cnt" class="lotc-search-ctg-field-cnt">
+<input class="text-field width100pc" id="lotc-ctg-search-field" name="Name" type="text" value="Зоопарк Джунгли в подарок на 8 марта! 3gel-p1245-s19-a1" />                <span class="abspos t0 r0">
+                    <button id="lotc-ctg-search-button" class="button lined-button lined-button-gray-disabled">Найти категорию</button>
+                </span>
+            </div>
+        </div>
+      
+    </div>
+
+</div>
+
+
+<div class="sform-row-lrg clearfix">
+    
+    
+    <div class="form-column-left floatleft">
+        <div class="form-column-gap">
+            <label class="form-text-title">Категория</label>
+        </div>
+        
+        <div class="form-text-remark form-remark-under-label">
+            Место в каталоге товаров
+        </div>
+    </div> 
+
+    <div id="lotc-ctg-select-cnt" class="form-column-center-right floatleft">
+
+
+        
+        
+        <div id="lotc-ctg-title" class="lotc-ctg-title lotc-ctg-title-selected">
+            
+            <div class="lotc-ctg-manual-select-pad"> </div>
+            
+            <div id="category_mesage"></div>
+
+            <div id="lotc-ctg-manual-select" class="lotc-ctg-manual-select nodisplay"><a class="dot-line lotc-ctg-show-manual">Подобрать категорию вручную</a></div>
+
+
+        </div>
+         
+        
+      
+        <div id="lotc-ctg-search">
+      
+            
+
+            <div  id="lotc-ctg-search-status-found" class="lotc-ctg-title-search-status nodisplay">Мы нашли <span id="lotc-ctg-search-status-found-num">0</span> подходящих категорий:</div>
+                
+            <div  id="lotc-ctg-search-status-no-found" class="lotc-ctg-title-search-status nodisplay">
+                <div class="bold mb12">К сожалению, мы не нашли подходящую категорию.</div>
+                Измените название или <a class="dot-line lotc-ctg-show-manual">подберите по каталогу вручную. </a>
+            </div>
+
+
+            
+
+ 
+            
+
+            <div id="lotc-ctg-fast-choise-loader" class="nodisplay"><span class="loader16x16 loader16x16-icon"></span></div>
+            <div id="lotc-ctg-fast-choise" class="font14"></div>
+
+            
+
+        </div>
+      
+        
+      
+        
+       
+
+        <div id="lotc-ctg-manual">
+        
+            
+        
+            <div class="column3-container nospacer">
+          
+                
+          
+                <div id="ctgselect-base" class="column3 layouter">
+            
+                    <div class="form-label-top">
+                        <label class="form-text-lbl">Основная категория</label>
+                    </div>
+            
+                    <select class="lotc-ctg-select combobox width100pc" size="12" name="Cat1">
+                         
+    <option   value="2110">23 февраля и 8 марта</option>
+    <option   value="2089">Олимпиада в Сочи</option>
+    <option   value="507">Авто, мото, водный транспорт</option>
+    <option   value="1286">Бизнес</option>
+    <option   value="729">Бытовая техника</option>
+    <option selected='selected'  value="928">Дети растут</option>
+    <option   value="794">Для парка, дачи, огорода, бани</option>
+    <option   value="837">Домашний быт</option>
+    <option   value="1144">Коллекционирование</option>
+    <option   value="573">Компьютеры, оргтехника, канцтовары</option>
+    <option   value="1262">Красота и здоровье</option>
+    <option   value="1040">Литература, аудиокниги</option>
+    <option   value="1539">Мебель, фурнитура</option>
+    <option   value="1235">Моделизм</option>
+    <option   value="1090">Мультимедиа, Игры, Интернет</option>
+    <option   value="1245">Музыкальные инструменты и оборудование</option>
+    <option   value="773">Недвижимость</option>
+    <option   value="881">Одежда, обувь, галантерея</option>
+    <option   value="870">Продукты</option>
+    <option   value="754">Радиодетали</option>
+    <option   value="973">Растения и животные</option>
+    <option   value="1213">Ручная работа</option>
+    <option   value="1381">Спортивные товары</option>
+    <option   value="808">Строительство и ремонт</option>
+    <option   value="1601">Cувениры, подарки</option>
+    <option   value="630">Телефоны, связь, навигация</option>
+    <option   value="1429">Туризм, охота, самооборона</option>
+    <option   value="673">Фото, видеокамеры, оптика</option>
+    <option   value="1118">Ювелирные изделия, бижутерия, часы</option>
+    <option  data-is-end-ctg='true' value="1320">Разное</option>
+
+                    </select>
+            
+                    
+            
+                </div>
+          
+                
+          
+                
+          
+                <div id="ctgselect-add" class="column3 layouter ">
+            
+                    <div class="form-label-top">
+                        <label class="form-text-lbl">Подкатегория</label>
+                    </div>
+                    <select class="lotc-ctg-select combobox width100pc" size="12" name="Cat2">
+ 
+    <option   value="945">Велосипеды, санки, коляски</option>
+    <option  data-is-end-ctg='true' value="965">Детская литература</option>
+    <option  data-is-end-ctg='true' value="952">Детские автокресла</option>
+    <option selected='selected'  value="933">Игрушки</option>
+    <option   value="954">Кормление и уход, гигиена</option>
+    <option  data-is-end-ctg='true' value="1770">Манежи</option>
+    <option   value="929">Одежда и обувь</option>
+    <option  data-is-end-ctg='true' value="953">Постельные принадлежности</option>
+    <option  data-is-end-ctg='true' value="1771">Развивающие коврики</option>
+    <option  data-is-end-ctg='true' value="1764">Рефераты, курсовые, дипломные работы</option>
+    <option  data-is-end-ctg='true' value="1767">Слинги, кенгуру, переноски</option>
+    <option   value="960">Творчество</option>
+    <option  data-is-end-ctg='true' value="1321">Учёба (Школа, вуз)</option>
+    <option  data-is-end-ctg='true' value="1772">Ходунки, прыгунки, качели</option>
+    <option  data-is-end-ctg='true' value="972">Другое</option>
+                    </select>
+                    <span class="loader16x16 loader16x16-icon nodisplay"></span>
+            
+                </div>
+          
+                    
+          
+                
+          
+                <div id="ctgselect-sub" class="column3 layouter  ">
+            
+                    <div class="form-label-top">
+                        <label class="form-text-lbl">Дополнительно</label>
+                    </div>
+                    <select class="lotc-ctg-select combobox width100pc" size="12" name="Cat3">
+ 
+    <option  data-is-end-ctg='true' value="942">Военная тема</option>
+    <option  data-is-end-ctg='true' value="1971">Для игры в песочнице и в снегу</option>
+    <option  data-is-end-ctg='true' value="935">Для младенцев</option>
+    <option  data-is-end-ctg='true' value="1595">Игрушки для купания</option>
+    <option  data-is-end-ctg='true' value="939">Конструкторы и наборы</option>
+    <option  data-is-end-ctg='true' value="936">Куклы и аксессуары</option>
+    <option  data-is-end-ctg='true' value="937">Машины и техника</option>
+    <option  data-is-end-ctg='true' value="941">Музыкальные</option>
+    <option selected='selected' data-is-end-ctg='true' value="934">Мягкие</option>
+    <option  data-is-end-ctg='true' value="943">Настольные игры</option>
+    <option  data-is-end-ctg='true' value="938">Пазлы</option>
+    <option  data-is-end-ctg='true' value="1532">Развивающие</option>
+    <option  data-is-end-ctg='true' value="940">Электронные</option>
+    <option  data-is-end-ctg='true' value="944">Другое</option>
+                    </select>
+                    <span class="loader16x16 loader16x16-icon nodisplay"></span>
+            
+                </div>
+          
+                           
+          
+            </div>
+
+        
+        
+            
+            <div class="form-text-remark mt16">Не нашли свою категорию? <a href="http://help.24au.ru/support/category/" target="_blank">Сообщите нам</a>, возможно, пора включить её в общий список.</div>
+            
+            <input id="categoryFrom" type="hidden" name="selectCategoryType" value="fromManual" />
+
+        </div>
+       <div id="lotc-ctg-alert-message" class="pad-panel-mini pp-offs font14 inlineblock mt16 nodisplay"></div>
+        
+   
+
+
+    </div>
+    
+</div>
+
+
+<div class="sform-row-lrg sform-end-line-row-min form-thin-line clearfix">
+  
+    <div class="form-column-left floatleft">
+        <div class="form-column-gap">
+            <label class="form-text-title">Параметры лота</label>
+        </div>
+        <div class="form-text-remark form-remark-under-label">
+            Характеристики товара
+        </div>
+    </div>
+    
+    <div class="form-column-center-right floatleft">
+        
+        <div id="select-ctg-to-props">
+        </div>
+
+            
+        <div id="properties_container">
+           
+        
+
+        <div class="pad-panel pp-offs gray95-bkg">
+            <div class="lotc-params nospacer form-3col-cnt">
+
+                    <div class="lotc-param form-3col-col layouter">
+                        
+                        <div class="form-label-top">
+                                <label class="form-text-lbl bold">* Состояние</label>
+        
+                        </div>
+
+                        <div id ="property_447">
+<input type="hidden" name="ListProperties[0].Id" value="447"/>
+        
+    <input type="radio" class="custom-radiobutton-input nodisplay"    name="ListProperties[0].Value" value="-1" />
+    <div class="lotc-param-rbtn-group">
+        <div>
+          <label class="custom-radiobutton">
+            <span class="custom-radiobutton-input-wrp">
+              <input type="radio" class="custom-radiobutton-input"    name="ListProperties[0].Value" value="18792">
+            </span>
+            <span class="custom-radiobutton-text">Б/у</span>
+          </label>  
+          </div>
+        <div>
+          <label class="custom-radiobutton">
+            <span class="custom-radiobutton-input-wrp">
+              <input type="radio" class="custom-radiobutton-input" checked=&quot;checked&quot;   name="ListProperties[0].Value" value="18791">
+            </span>
+            <span class="custom-radiobutton-text">Новое</span>
+          </label>  
+          </div>
+    </div>
+                        </div>
+                       
+                    </div>
+
+            </div>
+        </div>
+            <div class="form-text-remark mt8">* обязательные параметры</div>
+
+
+
+
+
+       
+        </div>           
+        
+       
+    </div>
+
+
+</div>
+
+    
+<div class="sform-row nospacer">
+    
+<div id="fileIdsContainer" class="nodisplay">
+    
+</div>
+
+<input type="hidden" value="DEFAULT" id="imageloadstatus" name="imageloadstatus" />
+
+
+<div class="form-column-left layouter">
+    <div class="form-column-gap">
+        <label class="form-text-title">Фотографии</label>
+
+        <div class="form-text-remark form-remark-under-label text">
+
+            <div class="bold">Внимание:</div>
+            <ul>
+                <li>размер файла не должен превышать 8 МБ;</li>
+                <li>формат фото jpg, gif, bmp, png;</li>
+                <li>ставьте фотографии, которые сделали сами, или изображения, свободные для распро&shy;странения (уважаем авторские права).</li>
+            </ul>
+
+            <p><span class="bold">Совет:</span> загружайте большие и красивые фотографии. Настоящее качественное фото — половина успеха.</p>
+
+        </div>
+    </div>
+</div>
+
+<div id="lotc-photo-loader-cnt" class="form-column-center-right layouter nospacer">
+
+    <div class="layouter lotc-photo-col">
+        <iframe id="uploaderIframe" width="100%" height="264" frameborder="0" border="0" src="/new/ImageUploadFrame/?TextType=LOT_TEXT&amp;ImageCollection=Temp&amp;IsProUser=False&amp;MaxPhotoCount=7&amp;ImageIds[0]=t_5316518623bbeb0f685cd706"></iframe>
+    </div>
+
+    <div class="layouter lotc-qrloader-col text-center">
+
+        <img class="lotc-qrloader-i" id="lotc-qrloader-i" alt="qr" />
+
+        <input id="QrCodeId" name="QrCodeId" type="hidden" value="" />
+
+        <div class="font14 gray40 leading13 mb12">Запустите приложение Фотогрузчик (<a target="_blank" href="http://help.24au.ru/help/164/">что это?</a>) и покажите телефону этот код.</div>
+        
+        <a href="https://play.google.com/store/apps/details?id=ru.app24au.photo" target="_blank">
+            <img src="http://static.24au.ru/i/available_on_google_play.png?v=138" alt="Загрузите на Google Play" />
+        </a>
+
+        
+
+    </div>
+
+</div>
+
+<script>
+
+    (function () {
+
+        Utils.Lotcreate.ImageContainer.Init({
+            idsContainer: $('#fileIdsContainer'),
+            imageloadStatusContainer: $('#imageloadstatus')
+        });
+
+        Utils.Lotcreate.PhotoBlockWithQr({
+            maxFileCount: 7,
+            showQrCode: true
+        });
+
+    })();
+
+</script>
+
+</div>
+    
+<div class="sform-row-lrg sform-end-line-row form-thin-line clearfix">
+    
+
+            
+    
+    <div class="form-column-left floatleft">
+        <div class="form-column-gap">
+
+            <label class="form-text-title">Описание лота</label>
+
+            <div class="form-text-remark form-remark-under-label text">
+
+                <div>Напишите о товаре подробно:</div>
+                <ul>
+                    <li>достоинства и дополнительные характеристики;</li>
+                    <li>обязательно укажите дефекты, если они есть;</li>
+                    <li>оставьте инструкцию как этим пользоваться, если такие вопросы могут возникнуть.</li>
+                </ul>
+
+                <p>Расскажите историю этой вещи, добавьте ссылку на видеоролик о ней.</p>
+                       
+     
+            </div>
+
+        </div>
+    </div>
+    
+
+    
+    <div class="form-column-center-right floatleft">
+        <div class="relpos">
+
+            
+            <div id="Description" class="textpost-form-container textpost-gray tfc-offs">
+                    <div class="textpost-form-buttons-pad">
+    
+            <a class="button box-button textpost-form-button bold" href="javascript:Utils.UI.WebTextBox.type_bold('DescriptionText');" title="Жирное начертание - выделите текст и нажмите кнопку 'Ж'. Текст будет заключен в теги [B][/B], которые преобразуются в выделенный жирным текст. ">Ж</a>
+            <a class="button box-button textpost-form-button italic" href="javascript:Utils.UI.WebTextBox.type_italic('DescriptionText');" title="Выделить курсивом - выделите требуемый текст и нажмите кнопку 'К'. Текст будет заключен в теги [I][/I], которые преобразуются в выделенный курсивом текст. ">К</a>
+            <a class="button box-button textpost-form-button underline" href="javascript:Utils.UI.WebTextBox.type_underline('DescriptionText');" title="Подчеркнутый текст - выделите требуемый текст и нажмите кнопку 'П'. Текст будет заключен в теги [U][/U], которые преобразуются в подчеркнутый текст.">П</a>
+            <a class="button box-button textpost-form-button sl-hyperlink" href="javascript:Utils.UI.WebTextBox.type_a('DescriptionText');" title="Гиперссылка - выделите ссылку в тексте и нажмите кнопку 'ссылка'. Текст будет заключен в теги [A][/A], которые преобразуются в ссылку. ">Ссылка</a>
+            <a class="button box-button textpost-form-button sl-image" href="javascript:Utils.UI.WebTextBox.type_img('DescriptionText');" title="Изображение - выделите ссылку на изображение в тексте и нажмите кнопку 'изображение'. Текст будет заключен в теги [IMG][/IMG], которые преобразуются в изображение. ">Картинка</a>
+            <a class="button box-button textpost-form-button sl-video" href="javascript:Utils.UI.WebTextBox.type_video('DescriptionText');" title="Видео - выделите ссылку на видео в тексте и нажмите кнопку 'видео'. Текст будет заключен в теги [VID][/VID], которые преобразуются в видео. ">Видео</a>
+        <a class="button box-button textpost-form-button sl-spelling" onclick="spellCheck('DescriptionText');">Правописание</a>
+
+    </div>     <script>
+                   Utils.Api.ScriptToHead('spellScript', 'http://static.24au.ru/Scripts/spell.js?v=138');
+
+                   function spellCheck(elem) {
+                       (new Speller({ url: "/Scripts/speller", lang: "ru", options: Speller.IGNORE_URLS + Speller.IGNORE_UPPERCASE + Speller.IGNORE_DIGITS + Speller.IGNORE_LATIN })).check([document.getElementById(elem)]);
+                   }
+    </script>
+    <div class="textpost-form-textarea-wrap text-field-wrap">
+            
+        <textarea Cols="100" Id="DescriptionText" Rows="10" class="textpost-form-textarea lotc-descript-textarea text-field" cols="20" id="Description" name="Description" rows="2">
+Зоопарк Джунгли, со звуком, 22 см, ТМ Sonata Style
+[B]Отличный подарок юной красавице на 8 марта![/B]
+
+[B]Успей купить по акции всего за 429,99 р.[/B]
+
+Большой выбор Интерактивных Игрушек [URL=http://krsk.24au.ru/auction/?find_str=3gel+s19]здесь[/URL]!                                 
+
+[B]Акция! Горячие Скидки к 8 Марта![/B] 
+Поздравляем юных принцесс и мам с наступающим 8 марта!!! И дарим [B]Скидки до 15%!!![/b] 
+См. товары по акции  [URL=http://krsk.24au.ru/auction/?find_str=3gel+a1]здесь[/URL]!
+
+[B]Другие мои лоты:[/B]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s19]Интерактивные Игрушки[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s18]Мягкие Игрушки[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s14]Barbie[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s16]Bratz[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s15]Hello Kitty[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s10]Winx[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s12]Zoobles[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s17]Малыши Zapf[/url]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s11]Собаки Vip Pets[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s3]Aulday Радиоуправляемые вертолеты[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s1]Aulday Радиоуправляемые машинки[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s6]DX Радиоуправляемые машинки[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s5]GK Радиоуправляемые машинки[/URL]
+[URL=http://krsk.24au.ru/auction/?find_str=3gel s2]Micro Stunt Aulday Машинки на радио управлении[/URL]
+[URL=http://24au.ru/user/poolsar/lots/active/]а также эти и многи другие[/URL]! ;)
+
+Если вас, что-то заинтересовало или появились вопросы, [B]Напишите мне прямо сейчас![/B]</textarea>
+
+        <div class="textpost-form-smiles">
+            <div class="nospacer">
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':D') "   class="textpost-form-smile layouter"><span class="smile smile-rzhaka"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':)))') " class="textpost-form-smile layouter"><span class="smile smile-smeshno"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':))') "  class="textpost-form-smile layouter"><span class="smile smile-veselo"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':)') "   class="textpost-form-smile layouter"><span class="smile smile-ulibka"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':|') "   class="textpost-form-smile layouter"><span class="smile smile-normal"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':(') "   class="textpost-form-smile layouter"><span class="smile smile-grustno"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':((') "  class="textpost-form-smile layouter"><span class="smile smile-pechalka"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':(((') " class="textpost-form-smile layouter"><span class="smile smile-slezki"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ';)') "   class="textpost-form-smile layouter"><span class="smile smile-podmigivaet"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':p') "   class="textpost-form-smile layouter"><span class="smile smile-yazik"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':o') "   class="textpost-form-smile layouter"><span class="smile smile-udivlen"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':-E') "  class="textpost-form-smile layouter"><span class="smile smile-gnev"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ']:-')"   class="textpost-form-smile layouter"><span class="smile smile-zloy "></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', '8|') "   class="textpost-form-smile layouter"><span class="smile smile-wtf"></span></a>
+            <a href="javascript:Utils.UI.WebTextBox.type_smile('DescriptionText', ':$') "   class="textpost-form-smile layouter"><span class="smile smile-uhmilka"></span></a>
+            </div> 
+        </div>  
+
+    </div> 
+            </div>
+            
+                   
+            <div id="DescriptionPreview" class="text lot-description lotc-description-preview nodisplay"></div>
+                 
+            <a id="DescriptionPreviewLink" class="dot-line lotc-description-preview-link" data-url="/new/GetWebTextBoxPreview/">Предпросмотр</a>
+                
+            <script>
+                Utils.Lotcreate.Description({
+                    textarea: $('#DescriptionText'),
+                    toggler: $('#DescriptionPreviewLink'),
+                    showBlock: $('#DescriptionPreview'),
+                    hideBlock: $('#Description')
+                });
+            </script>
+
+        </div>
+
+    </div>
+
+</div>
+    
+           
+<div class="sform-row-lrg nospacer">
+
+    <div class="form-column-left layouter">
+
+        <div class="form-column-gap">
+
+            <div class="form-column-gap">
+                <label class="form-text-title">Тип аукциона<br />и цена</label>
+            </div>
+
+        </div>
+         
+        
+    </div> 
+    
+    <div id="type-and-price" class="form-column-center-right layouter">
+                 
+            <div id="lotc-trade-type-select" class="mb12 font14">
+
+                <label class="tabulator-actor custom-radiobutton-highlight mr12">  
+                    <span class="custom-radiobutton">   
+                        <span class="custom-radiobutton-input-wrp">
+                            <input   class="custom-radiobutton-input" id="TypeAuctionStandart" name="TypeAuction" type="radio" value="STANDART" data-tabulator-group="auction-type" data-tabulator-block="#StandartBlock" />
+                        </span>
+                        <span class="custom-radiobutton-text">Стандартный</span>
+                    </span> 
+                </label>
+            
+            <label id="lotc-type-onerouble" class="custom-radiobutton-highlight mr12">  
+                <span class="custom-radiobutton">   
+                    <span class="custom-radiobutton-input-wrp">
+                        <input  class="custom-radiobutton-input" id="TypeAuctionRouble" name="TypeAuction" type="radio" value="ROUBLE" data-tabulator-group="auction-type" data-tabulator-block="#RoubleBlock" />
+                    </span>
+                    <span class="custom-radiobutton-text">С 1 рубля</span>
+                </span> 
+            </label>
+            
+            <label id="lotc-type-fixprice" class="custom-radiobutton-highlight mr12">  
+                <span class="custom-radiobutton">   
+                    <span class="custom-radiobutton-input-wrp">
+                        <input checked=&quot;checked&quot; class="custom-radiobutton-input" id="TypeAuctionOnlyBlit" name="TypeAuction" type="radio" value="ONLY_BLITZ"  data-tabulator-group="auction-type" data-tabulator-block="#OnlyBlitzBlock" />
+                    </span>
+                    <span class="custom-radiobutton-text">Фиксированная цена</span>
+                </span> 
+            </label>
+            
+                <label class="custom-radiobutton-highlight mr12">  
+                    <span class="custom-radiobutton">   
+                        <span class="custom-radiobutton-input-wrp">
+                            <input  class="custom-radiobutton-input" id="TypeAuctionRevers" name="TypeAuction" type="radio" value="REVERS"  data-tabulator-group="auction-type" data-tabulator-block="#ReverseBlock" />
+                        </span>
+                        <span class="custom-radiobutton-text">Реверсивный</span>
+                    </span> 
+                </label>
+
+           
+            </div>
+        
+        
+        
+        <div id="StandartBlock" class="nodisplay">
+            
+    <div class="form-3col-cnt nospacer">
+        <div class="form-3col-col layouter">
+            <div class="form-label-top">
+                <label class="form-text-lbl">Начальная цена*</label>
+            </div>
+<input class="text-field width100pc" data-input-type="integerunsign" id="StandartStartPrice" name="StandartStartPrice" type="text" value="" />        </div>
+                
+        <div class="form-3col-col layouter">
+            <div class="form-label-top">
+                <label class="form-text-lbl">Блиц-цена</label>
+            </div>
+            <input class="text-field width100pc" data-input-type="integerunsign" id="StandartBlitzPrice" name="StandartBlitzPrice" type="text" value="" />
+        </div>
+          
+
+    </div>
+
+    <div class="form23-col form-text-remark mt12">
+    Торги стартуют с <span class="bold">начальной цены.</span> Покупатели делают ставки на повышение. Побеждает участник, сделавший максимальную ставку на конец торгов. <span class="bold">Блиц-цена</span> — сумма, за которую вы готовы отдать лот, не торгуясь (указывать не обязательно).
+    </div> 
+
+
+
+        </div>
+        <div id="RoubleBlock" class="nodisplay">
+            
+
+    <div class="form-3col-cnt nospacer">           
+            
+        <div class="form-3col-col layouter">
+
+            <div class="form-label-top">
+                <label class="form-text-lbl">Начальная цена</label>
+            </div>
+            <span class="lot-price jadegreen">1</span>
+            <span class="lot-price-currency jadegreen">рубль</span>
+
+        </div>  
+        
+        <div class="form-3col-col layouter">
+
+            <div class="form-label-top">
+                <label class="form-text-lbl">Блиц-цена</label>
+            </div>
+            
+           
+            <input class="text-field width100pc" data-input-type="integerunsign" id="RoubleBlitzPrice" name="RoubleBlitzPrice" type="text" value="" />
+            
+
+        </div>          
+
+    </div>
+
+    <div class="form23-col form-text-remark mt12">
+    Стандартный аукцион, где стартовая цена равна 1 рублю.  Вы обязаны отдать лот по последней ставке, какой бы она ни была. <a href="http://help.24au.ru/help/9" target="_blank">Подробнее</a>
+    </div>
+        </div>
+        <div id="OnlyBlitzBlock" class="">
+            
+
+
+
+    <div class="form-3col-cnt nospacer">     
+        <div class="form-3col-col layouter">
+            <div class="form-label-top">
+                <label class="form-text-lbl">Цена*</label>
+            </div>
+           
+            <input class="text-field width100pc" data-input-type="integerunsign" id="OnlyBlitzPrice" name="OnlyBlitzPrice" type="text" value="429" />
+        </div>
+        
+    </div>
+
+    <div class="form23-col form-text-remark mt12">
+    Продажа товара как в магазине. <a href="http://help.24au.ru/help/15#155" target="_blank">Подробнее</a>
+    </div>
+
+    
+        </div>
+        <div id="ReverseBlock" class="nodisplay">
+            
+
+    <div class="form-3col-cnt nospacer">     
+            
+        <div class="form-3col-col layouter">
+            <div class="form-label-top">
+                <label class="form-text-lbl">Стартовая цена*</label>
+            </div>
+<input class="text-field width100pc" data-input-type="integerunsign" id="ReverseStartPrice" name="ReverseStartPrice" type="text" value="" />
+            
+        </div>
+        
+        <div class="form-3col-col layouter">
+            <div class="form-label-top">
+                <label class="form-text-lbl">Минимальная цена*</label>
+            </div>
+            
+            <input class="text-field width100pc" data-input-type="integerunsign" id="MinPrice" name="MinPrice" type="text" value="" />
+            
+        </div>
+
+
+    </div>
+
+    <div class="form23-col form-text-remark mt12">
+    За время торгов цена автоматически снижается со <span class="bold">стартовой</span> до <span class="bold">минимальной.</span> Побеждает тот, кто выкупает лот по текущей цене. <a href="http://help.24au.ru/help/15#61" target="_blank">Подробнее</a>
+    </div>
+        </div>
+
+        <script>
+            Utils.Lotcreate.AuctionTypeSelector();
+            Utils.UI.inputOnlyNumbers($('#type-and-price').find('input[data-input-type]'));
+        </script>
+
+
+    </div>
+  
+    
+</div>
+
+
+
+
+
+    
+              
+        <div class="sform-row nospacer">
+            <div class="form-column-left layouter">
+                <div class="form-column-gap">
+                    <label class="form-text-title">Продолжительность<br />торгов</label>
+                </div>
+            </div>
+            <div class="form-column-center-right layouter">
+                <div class="nospacer form-3col-cnt">
+                    <div class="form-3col-col layouter">
+                        <select class="combobox width100pc" id="Days" name="Days"><option selected="selected" value="1">1 день</option>
+<option value="2">2 дня</option>
+<option value="3">3 дня</option>
+<option value="5">5 дней</option>
+<option value="7">Неделя</option>
+<option value="10">10 дней</option>
+<option value="14">2 недели</option>
+</select>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    
+<div class="sform-row form-thin-line sform-end-line-row nospacer">
+            <div class="form-column-left layouter">
+                <div class="form-column-gap">
+                    <label class="form-text-title">Особые условия</label>
+                </div>
+            </div> 
+            <div class="form-column-center-right layouter">
+                <div class="form-2col-cnt nospacer">
+                    <div class="form-2col-col layouter">
+                        <div style="padding-left: 24px">
+                            <label class="font14">
+                                <span class="custom-checkbox">
+                                    <span class="ico lot-telephone-icon abspos t0" style="left:-24px"></span>
+                                    <span class="custom-checkbox-square-wrap">
+                                        <input class="custom-checkbox-input" id="CheckPhone" name="CheckPhone" type="checkbox" value="true" /><input name="CheckPhone" type="hidden" value="false" />
+                                    </span>
+                                    <span class="custom-checkbox-text">Подтверждение телефона</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="form-text-remark form-remark-bottom">
+                           Для участников с подтвержденным номером мобильного телефона.  <a href="http://help.24au.ru/help/6#44" target="_blank">Подробнее</a>
+                        </div>
+                    </div>    
+                    <div class="form-2col-col layouter">
+      
+                        <div style="padding-left: 30px">
+                            <label class="font14">
+                                <span class="custom-checkbox">
+                                    <span class="ico lot-warranty-icon abspos t0" style="left:-30px"></span>
+                                    <span class="custom-checkbox-square-wrap">
+                                        <input class="custom-checkbox-input" id="IsGuaranteed" name="IsGuaranteed" type="checkbox" value="true" /><input name="IsGuaranteed" type="hidden" value="false" />
+                                    </span>
+                                    <span class="custom-checkbox-text"><span class="dot-line linkcolor">Гарантированные торги</span></span>
+                                </span>
+                            </label>
+                        </div>      
+                         
+                        <div class="mt8 nodisplay" id="warranty-sum">
+
+                            <div class="form-label-top">
+                                <label class="form-text-lbl">Размер гарантии</label>
+                            </div>
+
+                            <div class="nospacer">
+
+                                <div class="form13-col layouter">
+
+                                    <input class="text-field width100pc" data-input-type="integerunsign" id="guaranty-input" name="Guaranty" type="text" value="" />
+                                </div>
+
+                                <script>
+                                    Utils.UI.inputOnlyNumbers($('#guaranty-input'));
+                                </script>
+
+                                <div class="form-text-remark form23-col-minleft-gap layouter">
+
+                                    Заполняя это поле, Вы соглашаетесь<br />
+                                    <a href="http://help.24au.ru/help/2#98" target="_blank">с условиями гарантированных торгов</a>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-text-remark-mini form-remark-bottom">
+                                Данная сумма снимается при создании лота, и возвращается после завершения торгов согласно условиям гарантированных торгов.
+                            </div>
+
+
+
+                        </div>    
+                           
+                        <div class="form-text-remark form-remark-bottom">
+                            Необходим залог от продавца и покупателей.
+                            <a href="http://help.24au.ru/help/154#153" target="_blank">Подробнее</a>
+                        </div>
+
+                        <script>
+
+                            Utils.UI.simpleBlockSwitch({
+                                swithcer: $('#IsGuaranteed'),
+                                eventType: 'change',
+                                preInit: true,
+                                blockShowState: ':checked',
+                                blocks: [$('#warranty-sum')]
+                            });
+
+                        </script>
+                        
+                    </div>         
+                </div>
+            </div>
+        </div>
+    
+
+           
+<div id="select-maps" style="display: block;" class="sform-row sform-end-line-row-min form-thin-line">
+    <div class="sform-row clearfix" id ="mapContainer">
+        
+        <div class="form-column-left floatleft" >
+            <div class="form-column-gap-lrg">
+                <label class="form-text-title">Где находится товар?</label>
+
+                <div class="form-text-remark form-remark-under-label text">
+               
+                    <div class="bold">Что указать на карте?</div>
+                    <p>Место, где сейчас находится ваш лот, либо место, где вы можете его показать и передать.</p>
+
+                    <div class="bold">Зачем?</div>
+                    <p>Это помогает покупателям подбирать нужные товары в своём районе.</p>
+
+                    <div class="bold">Как убрать метку с карты?</div>
+                    <p>
+                        Без метки лот создать нельзя. 
+                        <span class="italic">Не нужно указывать точный адрес,</span> отмечайте ближайшую автобусную остановку или популярный ориентир микрорайона. 
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-column-center-right floatleft">
+                
+            <div class="clearfix">
+                <div class="lotc-geo-title">
+                    <div id="landmark-name">
+                    
+                                <span class="lotc-geo-title-nochoice"><span class="geomark-gray ico"></span> Укажите местоположение</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="pad-panel pp-offs gray95-bkg relpos">
+                <div class="lotc-geo-tabs">
+                    <div id="showMapLink" class="lotc-geo-tab lotc-geo-tab-left lotc-geo-tab-sel" data-tabulator-block="#lotc-geo-map-cnt" data-tabulator-group="lotc-geo-tabs">
+                        <a class="dot-line">На карте</a>
+                    </div>
+                    <div id="showLandmarkList" class="lotc-geo-tab lotc-geo-tab-right" data-tabulator-block="#areas-form" data-tabulator-group="lotc-geo-tabs">
+                        <a class="dot-line">Из списка</a>
+                    </div>
+                </div>
+                <div id="lotc-geo-map-cnt">
+                        <div id="map_error" class="font14 text-center" style="display: none;">Карта временно недоступна, воспользуйтесь выбором 
+        <span id="showLandmarkListNoMap" data-tabulator-block="#areas-form" data-tabulator-group="lotc-geo-tabs">
+            <a class="dot-line">из списка</a>
+        </span>
+    </div>
+    <div id = "YandexMap" class = "ya_map" style="display: none">
+        <div class = "ya_container" id = "YandexMap_c">
+            <div id = "__YandexMap"  class = "ya_map_body" style="height: 300px"></div>
+        </div>
+        <div onclick = " mapShow('YandexMap'); return false; " class = "ya_background"></div>
+    </div>
+ 
+                </div>
+                <div id="areas-form" class="nodisplay"></div>
+
+                <div id="landmarks-loader" class="pad-panel white-bkg font14 text-center nodisplay"><span class="loader16x16 loader16x16-icon ico-link-ico"></span><span class="verticalmiddle">Загрузка…</span></div>
+
+            </div>
+
+        </div>
+        
+        <input type="hidden" id="Landmark_Name" value="" />
+      
+        <input id="Landmark_Id" name="Landmark.Id" type="hidden" value="10" />
+        <input id="Landmark_IdRegion" name="Landmark.IdRegion" type="hidden" value="464" />
+      
+        <input id="Latitude" name="Latitude" type="hidden" value="56,0318984985352" />
+        <input id="Longitude" name="Longitude" type="hidden" value="92,7762985229492" />
+   
+    </div>
+</div>
+
+<script>
+    Utils.Lotcreate.LotGeoTabs();
+</script>
+
+    
+<div class="sform-row sform-end-line-row-min form-thin-line nospacer">
+      
+    
+    <div class="form-column-left layouter">
+        <div class="form-column-gap">
+            <label class="form-text-title">Условия передачи</label>
+
+            <div class="form-text-remark form-remark-under-label">
+                <p>Укажите, когда и где вы готовы встретиться с покупателем.
+                    Сколько дней даёте на выкуп лота. 
+                    Если вы готовы доставить товар, опишите условия доставки.
+                </p>
+            </div>
+
+        </div>
+    </div> 
+     
+      
+    
+
+            
+
+    
+    <div class="form-column-center-right layouter">
+            <div class="form23-col layouter relpos">
+                <textarea class="text-field width100pc lotc-ta-height-mini" cols="20" id="lotc-delivery-field" maxlength="300" name="Place" rows="2">
+Самовывоз. Возможна доставка по договоренности.</textarea>
+            </div>
+    </div>
+    
+
+
+</div>
+    
+<script>
+    Utils.Refresher.Add("CategorySearch", "/new/SearchCategory/", null);
+    Utils.Refresher.Add("Properties", "/new/Property/", $("#properties_container"));
+    Utils.Refresher.Add("CategoryList", "/new/GetCategoryList/", null);
+    Utils.Refresher.Add("ValueSubList", "/new/GetValueSubList/", null);
+    Utils.Refresher.Add("CountsLotInCategory", "/new/CountsLotInCategory/", null);
+
+    Utils.Refresher.Add("CardUser", "/new/refresh/card/", null);
+    Utils.Lotcreate.CategoriesSelector();
+    Utils.Lotcreate.CategoriesSelector.setCtgTitleBySelects();
+    //Utils.Lotcreate.CategoriesSelector.setNameAndFindCategory('Имя лота');
+ </script>
+    <script>
+        Utils.Lotcreate.CheckRulesFields();
+    </script>
+
+
+
+
+        
+        
+<div id ="user_card_form">
+    
+<div class="sform-row sform-end-line-row-min form-thin-line nospacer">
+    <div class="form-column-left layouter">
+        <div class="form-column-gap">
+            <label class="form-text-title">Продавец</label>
+        </div>
+    </div>
+    <div class="form-column-center-right layouter">
+        <div class="form-2col-cnt nospacer">
+            <div class="form-2col-col layouter clearfix">
+                <div class="lotc-human-pic-cnt">         
+                    <a href="http://24au.ru/user/poolsar//"><img class="lotc-human-pic" alt="poolsar" src="http://static.24au.ru/i/user-man-100x100.jpg?v=138" /></a>
+                </div>
+                <div class="lotc-user-inf">
+                    <div class="lotc-human">
+                        <span class="human-status human-status-online" title="сейчас на сайте"></span> 
+                        <a class="human-name" href="http://24au.ru/user/poolsar//">poolsar</a>
+                        <div class="human-badges-container">
+                        </div>
+                        <a class="human-rating human-rating-green layouter" href="http://24au.ru/user/poolsar/" title="Рейтинг: 11">11</a>
+                    </div>
+                    <div class="lotc-user-inf-row">
+                        <div class="lotc-user-inf-type">E-mail:</div>
+                        <div class="lotc-user-inf-value">grigoriy8706@mail.ru</div>
+                    </div>
+                    <div class="lotc-user-actions clearfix">
+                        <a class="font12 floatleft mt4" target="_blank" href="http://24au.ru/profile/">Изменить данные </a>
+                        <a class="floatright button box-button box-button-link" onclick="Utils.User.RefreshCardUser(Utils.Refresher.CardUser.Url)">Обновить данные</a>    
+                    </div>
+                </div>
+            </div>
+            <div class="form-2col-col layouter">
+                <div class="form-label-top">
+                            <label class="form-text-lbl">Дополнительная контактная информация</label>
+                </div>
+
+                <textarea class="text-field width100pc lotc-ta-height-mini" cols="20" id="ExtraContactInfo" maxlength="300" name="ExtraContactInfo" rows="2">
+</textarea>
+                            <div class="form-text-remark form-remark-bottom">
+                                Когда лучше звонить, куда приезжать за лотом и т.д.
+                            </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div id ="CityBlock">
+        <div class="sform-row sform-end-line-row-small form-thin-line nospacer">
+            
+
+    
+    
+    
+    <div class="form-column-left layouter">
+      
+        
+      
+        <div class="form-column-gap">
+            <label class="form-text-title">Аукцион публикации</label>
+        </div>
+        
+      
+
+
+    </div>
+    
+    
+    
+    
+    <div class="form-column-center-right layouter">
+      
+        <div class="nospacer">
+        
+      
+        <div class="form23-col layouter">
+
+            <div class="nospacer">
+                
+                <div class="floatleft layouter form-text-lbl mb8">
+                    <span class="form-text-lbl mr10">Лот будет опубликован на аукционе города </span>
+                    <select class="combobox mr10" id="city-selector" name="IdRegion"><option value="249">Абакан</option>
+<option value="306">Анадырь</option>
+<option value="273">Архангельск</option>
+<option value="339">Астрахань</option>
+<option value="251">Барнаул</option>
+<option value="366">Белгород</option>
+<option value="286">Биробиджан</option>
+<option value="279">Благовещенск</option>
+<option value="278">Брянск</option>
+<option value="368">Великий Новгород</option>
+<option value="283">Владивосток</option>
+<option value="284">Владикавказ</option>
+<option value="285">Владимир</option>
+<option value="319">Волгоград</option>
+<option value="323">Вологда</option>
+<option value="315">Воронеж</option>
+<option value="313">Горно-Алтайск</option>
+<option value="270">Грозный</option>
+<option value="829">Екатеринбург</option>
+<option value="424">Иваново</option>
+<option value="548">Ижевск</option>
+<option value="512">Йошкар-Ола</option>
+<option value="467">Иркутск</option>
+<option value="428">Казань</option>
+<option value="434">Калининград</option>
+<option value="435">Калуга</option>
+<option value="543">Кемерово</option>
+<option value="473">Киров</option>
+<option value="504">Кострома</option>
+<option value="463">Краснодар</option>
+<option selected="selected" value="464">Красноярск</option>
+<option value="519">Курган</option>
+<option value="521">Курск</option>
+<option value="531">Кызыл</option>
+<option value="485">Липецк</option>
+<option value="552">Магадан</option>
+<option value="566">Майкоп</option>
+<option value="572">Махачкала</option>
+<option value="649">Москва</option>
+<option value="657">Мурманск</option>
+<option value="559">Назрань</option>
+<option value="568">Нальчик</option>
+<option value="563">Нарьян-Мар</option>
+<option value="605">Нижний Новгород</option>
+<option value="627">Новосибирск</option>
+<option value="648">Омск</option>
+<option value="581">Орел</option>
+<option value="582">Оренбург</option>
+<option value="676">Пенза</option>
+<option value="672">Пермь</option>
+<option value="681">Петрозаводск</option>
+<option value="682">Петропавловск-Камчатский</option>
+<option value="654">Псков</option>
+<option value="407">Ростов-на-Дону</option>
+<option value="419">Рязань</option>
+<option value="699">Салехард</option>
+<option value="700">Самара</option>
+<option value="702">Санкт-Петербург</option>
+<option value="692">Саранск</option>
+<option value="694">Саратов</option>
+<option value="724">Смоленск</option>
+<option value="729">Ставрополь</option>
+<option value="744">Сыктывкар</option>
+<option value="767">Тамбов</option>
+<option value="771">Тверь</option>
+<option value="791">Тобольск</option>
+<option value="797">Томск</option>
+<option value="804">Тула</option>
+<option value="814">Тюмень</option>
+<option value="784">Улан-Удэ</option>
+<option value="790">Ульяновск</option>
+<option value="802">Уфа</option>
+<option value="759">Хабаровск</option>
+<option value="768">Ханты-Мансийск</option>
+<option value="872">Чебоксары</option>
+<option value="882">Челябинск</option>
+<option value="873">Черкесск</option>
+<option value="868">Чита</option>
+<option value="818">Элиста</option>
+<option value="899">Южно-Сахалинск</option>
+<option value="905">Якутск</option>
+<option value="902">Ярославль</option>
+</select>
+                    <span id="lotc-other-city-count" ></span>
+                </div>
+                    <script>
+                        Utils.Lotcreate.citySelector.init({ nodeSelector: '#city-selector' });
+                    </script>
+            </div>
+        </div>
+
+            
+        
+      
+        
+      
+            <div class="form13-col floatright layouter">
+        
+                <span class="gray60 dot-line font13">Добавить ещё города</span>
+        
+                <div class="form-text-remark form-remark-bottom">
+                    Доступно для ПРО-аккаунта 
+                    (<a href="http://24au.ru/profile/pro/" target="_blank">подключить</a>)
+                </div>
+        
+            </div>
+
+       </div>
+       
+
+
+
+    </div>
+    
+  
+  
+
+  <script>Utils.Lotcreate.proPubCities();</script>
+
+            
+         
+
+        </div>
+</div>
+
+
+<div id ="Delivery">
+    
+</div>
+        
+<div id ="SaleBlock">
+    
+</div>
+<div id ="AutoRepeat">
+
+<div id="lotc-advancer" class="sform-row sform-end-line-row-min form-thin-line nospacer">
+    <div class="form-column-left layouter">
+         
+    </div>
+    <div class="form-column-center-right layouter nospacer">
+        
+        <div class="form23-col-minright-gap layouter">
+            
+            <div class="form-text-title">
+                <label class="custom-checkbox custom-checkbox-disabled">
+                    <span class="custom-checkbox-square-wrap">
+                        <input class="custom-checkbox-input" disabled="disabled" id="UseAutoRepeat" name="UseAutoRepeat" type="checkbox" value="true" /><input name="UseAutoRepeat" type="hidden" value="false" />
+                    </span>
+                    <span class="custom-checkbox-text">Автоперевыставление </span>
+                
+                </label>
+            </div>
+                    <div class="form-text-remark form-remark-under-label">повторные торги запускаются автоматически, если лот не нашел покупателя</div>
+            
+        
+
+        </div>
+            <div class="form13-col layouter">
+            
+                <div class="form-text-remark form-remark-bottom">
+                    Доступно для ПРО-аккаунта  (<a href="http://24au.ru/profile/pro/" target="_blank">подключить</a>)
+                </div>
+
+            </div>
+
+
+    </div>
+
+</div>
+</div>
+<div id="Advancer">
+    <script>
+        Utils.Lotcreate.Advancer.Preload({
+            container: $('#Advancer'),
+            itemDuration: $('#Days')
+        });
+        Utils.Lotcreate.UserBlocks.Init({
+            url: '/new/UserBlocks/',
+            AdvContainer: $("#Advancer"),
+            CityContainer: $("#CityBlock"),
+            SaleContainer: $("#SaleBlock"),
+            DeliveryContainer: $("#Delivery"),
+            AutoRepeatContainer: $("#AutoRepeat")
+        });
+    </script>
+
+<div id="Div1" class="sform-row sform-end-line-row-min form-thin-line nospacer">
+    
+    <div class="form-column-left layouter">
+         
+    </div> 
+      
+
+    
+    <div class="form-column-center-right layouter">
+        <div class="form-text-title">
+            <label class="custom-checkbox">
+                <span class="custom-checkbox-square-wrap">
+                    <input checked="checked" class="custom-checkbox-input" id="IsAdvanceShow" name="IsAdvanceShow" type="checkbox" value="true" /><input name="IsAdvanceShow" type="hidden" value="false" />
+                </span>
+                        <span class="custom-checkbox-text">Заказать продвижение (рекламу) лота</span>
+                
+                
+            </label>
+        </div>
+                 <div class="form-text-remark form-remark-under-label">
+                     после создания лота Вам будет предложено заказать продвижение (рекламу) лота.
+                 </div>
+        
+    </div>
+    
+
+</div>
+    
+</div>
+
+
+                <div id="lotc-page-error" class="sform-row-lrg sform-end-line-row-min form-thin-line nospacer">
+
+                    <div class="form-column-left layouter"></div>
+
+                    <div class="form-column-center-right layouter">
+
+                        <div class="section-header-mini red">Ошибки заполнения:</div>
+                    
+                        <div class="font14">    
+
+                                    <div class="md-li">Лот с таким названием уже выставлен вами</div>
+
+                        </div>
+
+                        <div class="mt12 font16">Пожалуйста, исправьте ошибки и вы сможете опубликовать лот.</div>
+
+                    </div>
+
+                </div>
+                <script> Utils.Lotcreate.FirstErrorScroll(); </script>
+
+
+
+
+        <div class="mb36 nospacer">
+            
+            <div class="form-column-left layouter"></div>
+            
+            <div class="form-column-center-right layouter">
+                <div class="lotc-create-button-cnt">
+                    <input id="lotc-form-submit" type="submit" value="Опубликовать лот" class="lotc-create-button form-big-button lined-button-green lined-button button" />
+                    <div id="lotc-create-button-message" class="lotc-create-button-message hidden"><span class="loader16x16 loader16x16-icon mr8"></span><span class="verticalmiddle">Публикация лота…</span></div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+</div>
+
+   
+    
+
+
+
+
+
+
+
+
+        </div>
+        
+    
+        <footer class="sff">
+
+  <div class="page-min-width">
+  <div class="page-margin">
+
+    <div class="footer">
+
+    <div class="clearfix">
+
+    <div class="page-left-col floatleft">
+
+      <div class="footer-search-column">
+
+        <div class="footer-search">
+            <form class="mini-search" method="get" action="http://common.24au.ru/search/" >
+                <input class="mini-search-text text-field" id="SearchText" name="SearchText" placeholder="Поиск" type="text" value="" />
+                <input class="mini-search-submit button" type="submit" value="" />
+            </form>
+        </div>
+
+        <ul class="footer-list">
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/33/" rel="nofollow" target="_blank">О проекте</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://24au.info/tag/vakansii/" rel="nofollow" target="_blank">Наши вакансии</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://24au.info/" rel="nofollow" target="_blank">Блог компании 24au.info</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="ico-link" href="http://twitter.com/#!/24au_ru" target="_blank" rel="nofollow"><span class="twitter-ico ico ico-link-ico"></span></a>
+            <a class="ico-link" href="http://vk.com/auction24au" target="_blank" rel="nofollow"><span class="vk-ico ico ico-link-ico"></span></a>
+            <a class="ico-link" href="https://www.facebook.com/24au.ru" target="_blank" rel="nofollow"><span class="facebook-ico ico ico-link-ico"></span></a>
+          </li>
+            
+
+        </ul>
+
+      </div> 
+
+    </div> 
+
+    <div class="page-right-col floatleft">
+    <div class="page-right-col-gap footer-help-column-pre nospacer">
+
+
+      <div class="footer-help-column layouter">
+
+        <div class="footer-header">Помощь</div>
+ 
+
+        <ul class="footer-list inlineblock">
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/12/" rel="nofollow" target="_blank">Как купить</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/13/" rel="nofollow" target="_blank">Как продать</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/14/" rel="nofollow" target="_blank">Увеличить продажи</a>
+          </li>
+
+            
+
+        </ul>
+
+        <ul class="footer-list inlineblock ml18">
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/158/" rel="nofollow" target="_blank">Импорт лотов</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/22/" rel="nofollow" target="_blank">Отзывы и рейтинг</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://help.24au.ru/help/147/" rel="nofollow" target="_blank">Как заплатить за товар?</a>
+          </li>
+
+        </ul>
+
+        
+        <a class="footer-link font12 orange" href="http://help.24au.ru/support/" rel="nofollow" target="_blank">Обратиться в Службу поддержки</a>
+        
+
+      </div> 
+
+      <div class="footer-payments-column layouter">
+
+        <div class="footer-header">Оплата услуг сайта</div>
+
+        <ul class="footer-payments nospacer">
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-visa"></span>Visa</a>
+          </li>
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-mastercard"></span>Master Card</a>
+          </li>
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-yandex"></span>Яндекс.Деньги</a>
+          </li>
+
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-webmoney"></span>Webmoney</a>
+          </li>
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-rbk"></span>RBK Money</a>
+          </li>
+
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-beeline"></span>Beeline</a>
+          </li>
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-megafon"></span>Мегафон</a>
+          </li>
+
+          <li class="footer-payment layouter">
+            <a class="footer-payment-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank"><span class="footer-payment-sign footer-payment-mts"></span>МТС</a>
+          </li>
+
+        </ul>
+
+          <div class="footer-list-item">
+              <a class="footer-link" href="http://24au.ru/profile/bonus/" rel="nofollow" target="_blank">Другие способы оплаты</a>
+          </div>
+
+       
+      </div> 
+
+      <div class="footer-adv-column text-right layouter">
+
+          <div class="inlineblock text-left">
+
+        <div class="footer-header">Реклама на сайте</div>
+
+        <ul class="footer-list">
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://adveasy.ru/OboymaPreview.aspx" rel="nofollow" target="_blank">Рекламная обойма</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://24au.ru/advertising/price/" rel="nofollow" target="_blank">Баннерная реклама</a>
+          </li>
+
+          <li class="footer-list-item">
+            <a class="footer-link" href="http://24au.ru/profile/pro/" rel="nofollow" target="_blank"><span class="human-badge human-badge-pro ico-link-ico"></span>аккаунт</a>
+          </li>
+
+        </ul>
+
+
+              </div>
+
+      </div> 
+        
+         
+        
+      
+    
+    </div> 
+    </div> 
+
+    </div> 
+
+    <div class="clearfix footer-bottom">
+
+    <div class="page-left-col floatleft">
+
+        <a class="notalink" href="http://help.24au.ru/help/rules/" rel="nofollow" target="_blank"><span class="onhover-s-link-text">Пользовательское соглашение</span></a>
+       
+    </div>
+
+    <div class="page-right-col floatleft">
+        
+        <div class="page-right-col-gap footer-help-column-pre nospacer">
+
+            <div class="footer-help-column layouter">
+
+
+
+            © 2008–2014 Интернет-Аукцион 24AU.RU ®
+            <span class="bold ml8">18+</span>
+
+
+
+            </div> 
+
+            
+            <div class="footer-payments-column layouter">
+
+                
+                        <div class="footer-counter">
+
+          <script type="text/javascript"><!--
+    document.write("<a href='http://www.liveinternet.ru/click;24au' " +
+      "target=_blank><img src='//counter.yadro.ru/hit;24au?t14.6;r" +
+      escape(document.referrer) + ((typeof (screen) == "undefined") ? "" :
+      ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+      screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+      ";" + Math.random() +
+      "' alt='' title='LiveInternet: показано число просмотров за 24" +
+      " часа, посетителей за 24 часа и за сегодня' " +
+      "border='0' width='88' height='31'><\/a>")
+    //--></script><!--/LiveInternet-->
+            <div style="display:none;"><script type="text/javascript">
+                                           (function (w, c) {
+                                               (w[c] = w[c] || []).push(function () {
+                                                   try {
+                                                       w.yaCounter54642 = new Ya.Metrika({
+                                                           id: 54642,
+                                                           clickmap: true,
+                                                           trackLinks: true, type: 1
+                                                       });
+                                                   }
+                                                   catch (e) { }
+                                               });
+                                           })(window, "yandex_metrika_callbacks");
+                </script>
+            </div>
+            <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+            <noscript><div><img src="//mc.yandex.ru/watch/54642?cnt-class=1" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+                            
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-4555431-1', '24au.ru');
+                ga('send', 'pageview');
+
+            </script>
+
+        </div>
+
+            </div> 
+            
+
+             
+
+        
+      </div>  
+
+    </div>
+
+    </div> 
+
+
+    </div> 
+
+  </div> 
+  </div> 
+
+</footer>
+        
+<div class="totop-button-wrap nodisplay" id="stickybottom">
+<a class="totop-button" id="totop-button">
+<span class="totop-button-inner">
+<span class="totop-button-arrow"></span>наверх
+</span>
+</a>
+</div>
+
+        <div id = "ScriptsContainer" style = "display:none">
+            
+<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&mode=debug&lang=ru-RU&coordorder=longlat" type="text/javascript"></script>
+<script src="http://static.24au.ru/Scripts/Utils.YandexMap.js?v=138" type="text/javascript"></script>
+        <script type="text/javascript">
+            if (typeof (ymaps) == "undefined") {
+                $('#map_error').show();
+            } else {
+                ymaps.ready(function () {
+
+                    var points = [];
+                    points.push({
+                        longitude: '92,7762985229492',
+                        latitude: '56,0318984985352',
+                        draggable: true,
+                        hideIconOnBalloonOpen: false,
+                        style: "",
+                        BalloonContent: '<span class="font-size:14px" title = "Местоположение лота">Местоположение лота</span>'
+                    });
+                    Utils.YandexMap.mapNewItemShow('YandexMap',
+                       [
+                           92.7762985229492,
+                           56.0318984985352
+                       ])
+                    Utils.YandexMap.addPoints(points);
+                    var idLandmark = 10
+                    Utils.YandexMap.updateItemPoint(idLandmark, "92,7762985229492", '56,0318984985352');
+
+                });
+            }
+         </script>
+
+                                 <script>
+                                     Utils.Lotcreate.Form({ userAuth: true });
+                                  </script>
+
+        </div>
+     
+    </body>
+</html>

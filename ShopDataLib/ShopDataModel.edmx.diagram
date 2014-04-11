@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="694d013fbadd486ba92aa28161c56f33" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopDataModel.SupplierProduct" Width="1.5" PointX="2.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopDataModel.Supplier" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="ShopDataModel.SupplierCategory" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ShopDataModel.ShopProduct" Width="1.5" PointX="7.125" PointY="4.25" />
+        <EntityTypeShape EntityType="ShopDataModel.ShopCategory" Width="1.5" PointX="7" PointY="0.5" />
+        <AssociationConnector Association="ShopDataModel.SupplierSupplierProduct" />
+        <AssociationConnector Association="ShopDataModel.SupplierSupplierCategory" />
+        <AssociationConnector Association="ShopDataModel.CategoryProduct" />
+        <AssociationConnector Association="ShopDataModel.SupplierProductProduct" />
+        <EntityTypeShape EntityType="ShopDataModel.Image" Width="1.5" PointX="5" PointY="0.5" />
+        <AssociationConnector Association="ShopDataModel.SupplierProductSupplierImage" />
+        <AssociationConnector Association="ShopDataModel.SupplierCategorySupplierImage" />
+        <AssociationConnector Association="ShopDataModel.ImageShopCategory" />
+        <AssociationConnector Association="ShopDataModel.ImageShopProduct" />
+        <AssociationConnector Association="ShopDataModel.SupplierCategorySupplierCategory" />
+        <AssociationConnector Association="ShopDataModel.SupplierCategorySupplierProduct" />
+        <AssociationConnector Association="ShopDataModel.SupplierProductImage" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShopDataModel.PropertyHystory" Width="1.5" PointX="0.625" PointY="3.125" />
+        <AssociationConnector Association="ShopDataModel.ShopCategoryShopCategory" />
+        <AssociationConnector Association="ShopDataModel.ShopCategorySupplierCategory" />
+        <EntityTypeShape EntityType="ShopDataModel.Settings" Width="1.5" PointX="8.875" PointY="0.625" />
+        <AssociationConnector Association="ShopDataModel.ImageShopProduct1" />
+        <AssociationConnector Association="ShopDataModel.ImageShopCategory1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

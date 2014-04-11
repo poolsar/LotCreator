@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83C08BBF-9CF5-4198-B566-DA99FAE5B74F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToyShopDataLib</RootNamespace>
+    <AssemblyName>ToyShopDataLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.3.3\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adv24au.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdvCategory.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdvExport\24au\AdvPreparer24Au.cs" />
+    <Compile Include="AdvExport\AdvExporterVKontakte.cs" />
+    <Compile Include="AdvExport\AdvPreparer.cs" />
+    <Compile Include="AdvExport\WebStore\CSVConstants.cs" />
+    <Compile Include="AdvExport\AdvExporter.cs" />
+    <Compile Include="AdvExport\FtpClient.cs" />
+    <Compile Include="AdvExport\24au\LotCloser24au.cs" />
+    <Compile Include="AdvExport\24au\AdvExporter24Au.cs" />
+    <Compile Include="AdvExport\WebStore\AdvExporterWebStore.cs" />
+    <Compile Include="AdvExport\24au\UploadImage24Au.cs" />
+    <Compile Include="AdvExport\WebStore\BeforeSyncController.cs" />
+    <Compile Include="AdvExport\WebStore\FactoryHost.cs" />
+    <Compile Include="AdvExport\WebStore\LanguageUtils.cs" />
+    <Compile Include="AdvExport\WebStore\WebStoreController.cs" />
+    <Compile Include="AdvExport\WebStore\WebStoreSwitch.cs" />
+    <Compile Include="AdvImage.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdvImageVersion.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BegemotCountHistory.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BegemotPriceHistory.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BegemotProduct.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BegemotSale.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BegemotSalePrice.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\BegemotImporter.cs" />
+    <Compile Include="Logic\BegemotPriceRow.cs" />
+    <Compile Include="Logic\BegemotParser.cs" />
+    <Compile Include="Logic\PageLoader.cs" />
+    <Compile Include="Marketplace.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partials\Adv24au.cs" />
+    <Compile Include="Partials\AdvImage.cs" />
+    <Compile Include="Partials\BegemotProduct.cs" />
+    <Compile Include="Partials\BegemotSale.cs" />
+    <Compile Include="Logic\BegemotSaleImporter.cs" />
+    <Compile Include="Logic\Context.cs" />
+    <Compile Include="Partials\MarketCategory.cs" />
+    <Compile Include="Partials\Marketplace.cs" />
+    <Compile Include="Partials\ProccessMesenger.cs" />
+    <Compile Include="Partials\Product.cs" />
+    <Compile Include="Partials\ProductCategory.cs" />
+    <Compile Include="Partials\ProductCode.cs" />
+    <Compile Include="Partials\ProductImage.cs" />
+    <Compile Include="Partials\ProductImageVersion.cs" />
+    <Compile Include="Partials\Sale.cs" />
+    <Compile Include="Partials\Style.cs" />
+    <Compile Include="Product.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImage.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductImageVersion.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Style.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToyShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToyShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToyShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\StringUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ToyShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ToyShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="ToyShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+      <LastGenOutput>ToyShopModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ToyShopModel.edmx.diagram">
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+    </None>
+    <None Include="ToyShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+      <LastGenOutput>ToyShopModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\bulk update\clear_copyinfo.sql" />
+    <Content Include="SQL\bulk update\delete_import.sql" />
+    <Content Include="SQL\bulk update\update_modified.sql" />
+    <Content Include="SQL\bulk update\update_unactive.sql" />
+    <Content Include="SQL\bulk update\_all.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ToyShopModel.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageMakerWpf\ImageMakerWpf.csproj">
+      <Project>{0B220B9D-F8CE-4BD9-A16F-F10195FD6917}</Project>
+      <Name>ImageMakerWpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrestaSharp-master\PrestaSharp.csproj">
+      <Project>{3d494a24-06ba-475b-a158-162745683ec3}</Project>
+      <Name>PrestaSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{125b7da1-8f35-4833-bd02-04aba3720206}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

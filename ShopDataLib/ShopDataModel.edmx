@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ShopDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ShopDataModelStoreContainer">
+          <EntitySet Name="ImageSet" EntityType="ShopDataModel.Store.ImageSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PropertyHystorySet" EntityType="ShopDataModel.Store.PropertyHystorySet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SettingsSet" EntityType="ShopDataModel.Store.SettingsSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopCategorySet" EntityType="ShopDataModel.Store.ShopCategorySet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopProductSet" EntityType="ShopDataModel.Store.ShopProductSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SupplierCategorySet" EntityType="ShopDataModel.Store.SupplierCategorySet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SupplierProductSet" EntityType="ShopDataModel.Store.SupplierProductSet" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SupplierSet" EntityType="ShopDataModel.Store.SupplierSet" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CategoryProduct" Association="ShopDataModel.Store.FK_CategoryProduct">
+            <End Role="ShopCategorySet" EntitySet="ShopCategorySet" />
+            <End Role="ShopProductSet" EntitySet="ShopProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageShopCategory" Association="ShopDataModel.Store.FK_ImageShopCategory">
+            <End Role="ShopCategorySet" EntitySet="ShopCategorySet" />
+            <End Role="ImageSet" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageShopCategory1" Association="ShopDataModel.Store.FK_ImageShopCategory1">
+            <End Role="ImageSet" EntitySet="ImageSet" />
+            <End Role="ShopCategorySet" EntitySet="ShopCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageShopProduct" Association="ShopDataModel.Store.FK_ImageShopProduct">
+            <End Role="ShopProductSet" EntitySet="ShopProductSet" />
+            <End Role="ImageSet" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ImageShopProduct1" Association="ShopDataModel.Store.FK_ImageShopProduct1">
+            <End Role="ImageSet" EntitySet="ImageSet" />
+            <End Role="ShopProductSet" EntitySet="ShopProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopCategoryShopCategory" Association="ShopDataModel.Store.FK_ShopCategoryShopCategory">
+            <End Role="ShopCategorySet" EntitySet="ShopCategorySet" />
+            <End Role="ShopCategorySet1" EntitySet="ShopCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopCategorySupplierCategory" Association="ShopDataModel.Store.FK_ShopCategorySupplierCategory">
+            <End Role="ShopCategorySet" EntitySet="ShopCategorySet" />
+            <End Role="SupplierCategorySet" EntitySet="SupplierCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierCategorySupplierCategory" Association="ShopDataModel.Store.FK_SupplierCategorySupplierCategory">
+            <End Role="SupplierCategorySet" EntitySet="SupplierCategorySet" />
+            <End Role="SupplierCategorySet1" EntitySet="SupplierCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierCategorySupplierImage" Association="ShopDataModel.Store.FK_SupplierCategorySupplierImage">
+            <End Role="SupplierCategorySet" EntitySet="SupplierCategorySet" />
+            <End Role="ImageSet" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierCategorySupplierProduct" Association="ShopDataModel.Store.FK_SupplierCategorySupplierProduct">
+            <End Role="SupplierCategorySet" EntitySet="SupplierCategorySet" />
+            <End Role="SupplierProductSet" EntitySet="SupplierProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProductImage" Association="ShopDataModel.Store.FK_SupplierProductImage">
+            <End Role="SupplierProductSet" EntitySet="SupplierProductSet" />
+            <End Role="ImageSet" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProductProduct" Association="ShopDataModel.Store.FK_SupplierProductProduct">
+            <End Role="ShopProductSet" EntitySet="ShopProductSet" />
+            <End Role="SupplierProductSet" EntitySet="SupplierProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierProductSupplierImage" Association="ShopDataModel.Store.FK_SupplierProductSupplierImage">
+            <End Role="SupplierProductSet" EntitySet="SupplierProductSet" />
+            <End Role="ImageSet" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierSupplierCategory" Association="ShopDataModel.Store.FK_SupplierSupplierCategory">
+            <End Role="SupplierSet" EntitySet="SupplierSet" />
+            <End Role="SupplierCategorySet" EntitySet="SupplierCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplierSupplierProduct" Association="ShopDataModel.Store.FK_SupplierSupplierProduct">
+            <End Role="SupplierSet" EntitySet="SupplierSet" />
+            <End Role="SupplierProductSet" EntitySet="SupplierProductSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ImageSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UriOnSupplier" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LocalPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StatusCode" Type="int" Nullable="false" />
+          <Property Name="IdOnWebStore" Type="int" />
+          <Property Name="SupplierProduct_Id" Type="int" />
+          <Property Name="SupplierCategory_Id" Type="int" />
+          <Property Name="ShopCategory_Id" Type="int" />
+          <Property Name="ShopProduct_Id" Type="int" />
+          <Property Name="SupplierProductAsDefault_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyHystorySet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Entity" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Property" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OldValue" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NewValue" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+          <Property Name="EntityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SettingsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopCategorySet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="InShop" Type="bit" Nullable="false" />
+          <Property Name="IdOnWebStore" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="LinkRewrite" Type="nvarchar(max)" />
+          <Property Name="Parent_Id" Type="int" />
+          <Property Name="DefaultImage_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="ShopProductSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" />
+          <Property Name="DiscountPrice" Type="decimal" Nullable="false" />
+          <Property Name="IsSale" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ShortDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="InShop" Type="bit" Nullable="false" />
+          <Property Name="IdOnWebStore" Type="int" />
+          <Property Name="Unity" Type="nvarchar(max)" />
+          <Property Name="LinkRewrite" Type="nvarchar(max)" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="DefaultImage_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="SupplierCategorySet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdOnSource" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UriOnSource" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StatusCode" Type="int" Nullable="false" />
+          <Property Name="Supplier_Id" Type="int" Nullable="false" />
+          <Property Name="Parent_Id" Type="int" />
+          <Property Name="ShopCategory_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="SupplierProductSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdOnSource" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UriOnSource" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DiscountPrice" Type="decimal" Nullable="false" />
+          <Property Name="Price" Type="decimal" Nullable="false" />
+          <Property Name="IsSale" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Nullable="false" />
+          <Property Name="StatusCode" Type="int" Nullable="false" />
+          <Property Name="Supplier_Id" Type="int" Nullable="false" />
+          <Property Name="ShopProduct_Id" Type="int" />
+          <Property Name="Category_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="SupplierSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Uri" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CategoryProduct">
+          <End Role="ShopCategorySet" Type="ShopDataModel.Store.ShopCategorySet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopProductSet" Type="ShopDataModel.Store.ShopProductSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopProductSet">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageShopCategory">
+          <End Role="ShopCategorySet" Type="ShopDataModel.Store.ShopCategorySet" Multiplicity="0..1" />
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageSet">
+              <PropertyRef Name="ShopCategory_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageShopCategory1">
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="0..1" />
+          <End Role="ShopCategorySet" Type="ShopDataModel.Store.ShopCategorySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopCategorySet">
+              <PropertyRef Name="DefaultImage_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageShopProduct">
+          <End Role="ShopProductSet" Type="ShopDataModel.Store.ShopProductSet" Multiplicity="0..1" />
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopProductSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageSet">
+              <PropertyRef Name="ShopProduct_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ImageShopProduct1">
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="0..1" />
+          <End Role="ShopProductSet" Type="ShopDataModel.Store.ShopProductSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopProductSet">
+              <PropertyRef Name="DefaultImage_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopCategoryShopCategory">
+          <End Role="ShopCategorySet" Type="ShopDataModel.Store.ShopCategorySet" Multiplicity="0..1" />
+          <End Role="ShopCategorySet1" Type="ShopDataModel.Store.ShopCategorySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopCategorySet1">
+              <PropertyRef Name="Parent_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopCategorySupplierCategory">
+          <End Role="ShopCategorySet" Type="ShopDataModel.Store.ShopCategorySet" Multiplicity="0..1" />
+          <End Role="SupplierCategorySet" Type="ShopDataModel.Store.SupplierCategorySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplierCategorySet">
+              <PropertyRef Name="ShopCategory_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierCategorySupplierCategory">
+          <End Role="SupplierCategorySet" Type="ShopDataModel.Store.SupplierCategorySet" Multiplicity="0..1" />
+          <End Role="SupplierCategorySet1" Type="ShopDataModel.Store.SupplierCategorySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplierCategorySet1">
+              <PropertyRef Name="Parent_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierCategorySupplierImage">
+          <End Role="SupplierCategorySet" Type="ShopDataModel.Store.SupplierCategorySet" Multiplicity="0..1" />
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageSet">
+              <PropertyRef Name="SupplierCategory_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierCategorySupplierProduct">
+          <End Role="SupplierCategorySet" Type="ShopDataModel.Store.SupplierCategorySet" Multiplicity="0..1" />
+          <End Role="SupplierProductSet" Type="ShopDataModel.Store.SupplierProductSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierCategorySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplierProductSet">
+              <PropertyRef Name="Category_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProductImage">
+          <End Role="SupplierProductSet" Type="ShopDataModel.Store.SupplierProductSet" Multiplicity="0..1" />
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierProductSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageSet">
+              <PropertyRef Name="SupplierProductAsDefault_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProductProduct">
+          <End Role="ShopProductSet" Type="ShopDataModel.Store.ShopProductSet" Multiplicity="0..1" />
+          <End Role="SupplierProductSet" Type="ShopDataModel.Store.SupplierProductSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopProductSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplierProductSet">
+              <PropertyRef Name="ShopProduct_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierProductSupplierImage">
+          <End Role="SupplierProductSet" Type="ShopDataModel.Store.SupplierProductSet" Multiplicity="0..1" />
+          <End Role="ImageSet" Type="ShopDataModel.Store.ImageSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierProductSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImageSet">
+              <PropertyRef Name="SupplierProduct_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierSupplierCategory">
+          <End Role="SupplierSet" Type="ShopDataModel.Store.SupplierSet" Multiplicity="1" />
+          <End Role="SupplierCategorySet" Type="ShopDataModel.Store.SupplierCategorySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplierCategorySet">
+              <PropertyRef Name="Supplier_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplierSupplierProduct">
+          <End Role="SupplierSet" Type="ShopDataModel.Store.SupplierSet" Multiplicity="1" />
+          <End Role="SupplierProductSet" Type="ShopDataModel.Store.SupplierProductSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplierSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplierProductSet">
+              <PropertyRef Name="Supplier_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShopDataModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ShopEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="SupplierProductSet" EntityType="ShopDataModel.SupplierProduct" />
+          <EntitySet Name="SupplierSet" EntityType="ShopDataModel.Supplier" />
+          <EntitySet Name="SupplierCategorySet" EntityType="ShopDataModel.SupplierCategory" />
+          <EntitySet Name="ShopProductSet" EntityType="ShopDataModel.ShopProduct" />
+          <EntitySet Name="ShopCategorySet" EntityType="ShopDataModel.ShopCategory" />
+          <AssociationSet Name="SupplierSupplierProduct" Association="ShopDataModel.SupplierSupplierProduct">
+            <End Role="Supplier" EntitySet="SupplierSet" />
+            <End Role="SupplierProduct" EntitySet="SupplierProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="SupplierSupplierCategory" Association="ShopDataModel.SupplierSupplierCategory">
+            <End Role="Supplier" EntitySet="SupplierSet" />
+            <End Role="SupplierCategory" EntitySet="SupplierCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryProduct" Association="ShopDataModel.CategoryProduct">
+            <End Role="Category" EntitySet="ShopCategorySet" />
+            <End Role="Product" EntitySet="ShopProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="SupplierProductProduct" Association="ShopDataModel.SupplierProductProduct">
+            <End Role="SupplierProduct" EntitySet="SupplierProductSet" />
+            <End Role="Product" EntitySet="ShopProductSet" />
+          </AssociationSet>
+          <EntitySet Name="ImageSet" EntityType="ShopDataModel.Image" />
+          <AssociationSet Name="SupplierProductSupplierImage" Association="ShopDataModel.SupplierProductSupplierImage">
+            <End Role="SupplierProduct" EntitySet="SupplierProductSet" />
+            <End Role="SupplierImage" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="SupplierCategorySupplierImage" Association="ShopDataModel.SupplierCategorySupplierImage">
+            <End Role="SupplierCategory" EntitySet="SupplierCategorySet" />
+            <End Role="SupplierImage" EntitySet="ImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="ImageShopCategory" Association="ShopDataModel.ImageShopCategory">
+            <End Role="Image" EntitySet="ImageSet" />
+            <End Role="ShopCategory" EntitySet="ShopCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="ImageShopProduct" Association="ShopDataModel.ImageShopProduct">
+            <End Role="Image" EntitySet="ImageSet" />
+            <End Role="ShopProduct" EntitySet="ShopProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="SupplierCategorySupplierCategory" Association="ShopDataModel.SupplierCategorySupplierCategory">
+            <End Role="SupplierCategory" EntitySet="SupplierCategorySet" />
+            <End Role="SupplierCategory1" EntitySet="SupplierCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="SupplierCategorySupplierProduct" Association="ShopDataModel.SupplierCategorySupplierProduct">
+            <End Role="SupplierCategory" EntitySet="SupplierCategorySet" />
+            <End Role="SupplierProduct" EntitySet="SupplierProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="SupplierProductImage" Association="ShopDataModel.SupplierProductImage">
+            <End Role="SupplierProduct" EntitySet="SupplierProductSet" />
+            <End Role="Image" EntitySet="ImageSet" />
+          </AssociationSet>
+          <EntitySet Name="PropertyHystorySet" EntityType="ShopDataModel.PropertyHystory" />
+          <AssociationSet Name="ShopCategoryShopCategory" Association="ShopDataModel.ShopCategoryShopCategory">
+            <End Role="ShopCategory" EntitySet="ShopCategorySet" />
+            <End Role="ShopCategory1" EntitySet="ShopCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="ShopCategorySupplierCategory" Association="ShopDataModel.ShopCategorySupplierCategory">
+            <End Role="ShopCategory" EntitySet="ShopCategorySet" />
+            <End Role="SupplierCategory" EntitySet="SupplierCategorySet" />
+          </AssociationSet>
+          <EntitySet Name="SettingsSet" EntityType="ShopDataModel.Settings" />
+          <AssociationSet Name="ImageShopProduct1" Association="ShopDataModel.ImageShopProduct1">
+            <End Role="Image" EntitySet="ImageSet" />
+            <End Role="ShopProduct" EntitySet="ShopProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="ImageShopCategory1" Association="ShopDataModel.ImageShopCategory1">
+            <End Role="Image" EntitySet="ImageSet" />
+            <End Role="ShopCategory" EntitySet="ShopCategorySet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SupplierProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="IdOnSource" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="UriOnSource" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Decimal" Name="DiscountPrice" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsSale" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Supplier" Relationship="ShopDataModel.SupplierSupplierProduct" FromRole="SupplierProduct" ToRole="Supplier" />
+          <NavigationProperty Name="ShopProduct" Relationship="ShopDataModel.SupplierProductProduct" FromRole="SupplierProduct" ToRole="Product" />
+          <NavigationProperty Name="Images" Relationship="ShopDataModel.SupplierProductSupplierImage" FromRole="SupplierProduct" ToRole="SupplierImage" />
+          <Property Type="Decimal" Name="CostPrice" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Category" Relationship="ShopDataModel.SupplierCategorySupplierProduct" FromRole="SupplierProduct" ToRole="SupplierCategory" />
+          <NavigationProperty Name="DefaultImage" Relationship="ShopDataModel.SupplierProductImage" FromRole="SupplierProduct" ToRole="Image" />
+          <Property Type="Int32" Name="StatusCode" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Uri" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="ShopDataModel.SupplierSupplierProduct" FromRole="Supplier" ToRole="SupplierProduct" />
+          <NavigationProperty Name="Categories" Relationship="ShopDataModel.SupplierSupplierCategory" FromRole="Supplier" ToRole="SupplierCategory" />
+          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="SupplierCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Supplier" Relationship="ShopDataModel.SupplierSupplierCategory" FromRole="SupplierCategory" ToRole="Supplier" />
+          <NavigationProperty Name="SupplierImage" Relationship="ShopDataModel.SupplierCategorySupplierImage" FromRole="SupplierCategory" ToRole="SupplierImage" />
+          <NavigationProperty Name="Childs" Relationship="ShopDataModel.SupplierCategorySupplierCategory" FromRole="SupplierCategory" ToRole="SupplierCategory1" />
+          <NavigationProperty Name="Parent" Relationship="ShopDataModel.SupplierCategorySupplierCategory" FromRole="SupplierCategory1" ToRole="SupplierCategory" />
+          <NavigationProperty Name="Products" Relationship="ShopDataModel.SupplierCategorySupplierProduct" FromRole="SupplierCategory" ToRole="SupplierProduct" />
+          <Property Type="String" Name="IdOnSource" Nullable="false" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="UriOnSource" Nullable="false" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="StatusCode" Nullable="false" />
+          <NavigationProperty Name="ShopCategory" Relationship="ShopDataModel.ShopCategorySupplierCategory" FromRole="SupplierCategory" ToRole="ShopCategory" />
+          </EntityType>
+        <EntityType Name="ShopProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DiscountPrice" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="IsSale" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="ShortDescription" Nullable="false" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="ShopDataModel.CategoryProduct" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="SupplierProducts" Relationship="ShopDataModel.SupplierProductProduct" FromRole="Product" ToRole="SupplierProduct" />
+          <NavigationProperty Name="Images" Relationship="ShopDataModel.ImageShopProduct" FromRole="ShopProduct" ToRole="Image" />
+          <Property Type="Boolean" Name="InShop" Nullable="false" DefaultValue="false" />
+          <NavigationProperty Name="DefaultImage" Relationship="ShopDataModel.ImageShopProduct1" FromRole="ShopProduct" ToRole="Image" />
+          <Property Type="Int32" Name="IdOnWebStore" />
+          <Property Type="String" Name="Unity" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="LinkRewrite" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ShopCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="ShopDataModel.CategoryProduct" FromRole="Category" ToRole="Product" />
+          <NavigationProperty Name="Images" Relationship="ShopDataModel.ImageShopCategory" FromRole="ShopCategory" ToRole="Image" />
+          <NavigationProperty Name="Childs" Relationship="ShopDataModel.ShopCategoryShopCategory" FromRole="ShopCategory" ToRole="ShopCategory1" />
+          <NavigationProperty Name="Parent" Relationship="ShopDataModel.ShopCategoryShopCategory" FromRole="ShopCategory1" ToRole="ShopCategory" />
+          <NavigationProperty Name="SupplierCategories" Relationship="ShopDataModel.ShopCategorySupplierCategory" FromRole="ShopCategory" ToRole="SupplierCategory" />
+          <Property Type="Boolean" Name="InShop" Nullable="false" DefaultValue="false" />
+          <NavigationProperty Name="DefaultImage" Relationship="ShopDataModel.ImageShopCategory1" FromRole="ShopCategory" ToRole="Image" />
+          <Property Type="Int32" Name="IdOnWebStore" Nullable="true" />
+          <Property Type="String" Name="Description" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="LinkRewrite" Unicode="true" FixedLength="false" MaxLength="Max" />
+        </EntityType>
+        <Association Name="SupplierSupplierProduct">
+          <End Type="ShopDataModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="ShopDataModel.SupplierProduct" Role="SupplierProduct" Multiplicity="*" />
+        </Association>
+        <Association Name="SupplierSupplierCategory">
+          <End Type="ShopDataModel.Supplier" Role="Supplier" Multiplicity="1" />
+          <End Type="ShopDataModel.SupplierCategory" Role="SupplierCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="CategoryProduct">
+          <End Type="ShopDataModel.ShopCategory" Role="Category" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ShopDataModel.ShopProduct" Role="Product" Multiplicity="*" />
+        </Association>
+        <Association Name="SupplierProductProduct">
+          <End Type="ShopDataModel.SupplierProduct" Role="SupplierProduct" Multiplicity="*" />
+          <End Type="ShopDataModel.ShopProduct" Role="Product" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UriOnSupplier" Nullable="false" DefaultValue="" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="LocalPath" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="SupplierProduct" Relationship="ShopDataModel.SupplierProductSupplierImage" FromRole="SupplierImage" ToRole="SupplierProduct" />
+          <NavigationProperty Name="SupplierCategory" Relationship="ShopDataModel.SupplierCategorySupplierImage" FromRole="SupplierImage" ToRole="SupplierCategory" />
+          <NavigationProperty Name="ShopCategory" Relationship="ShopDataModel.ImageShopCategory" FromRole="Image" ToRole="ShopCategory" />
+          <NavigationProperty Name="ShopProduct" Relationship="ShopDataModel.ImageShopProduct" FromRole="Image" ToRole="ShopProduct" />
+          <NavigationProperty Name="SupplierProductAsDefault" Relationship="ShopDataModel.SupplierProductImage" FromRole="Image" ToRole="SupplierProduct" />
+          <Property Type="Int32" Name="StatusCode" Nullable="false" />
+          <NavigationProperty Name="ShopProductDefault" Relationship="ShopDataModel.ImageShopProduct1" FromRole="Image" ToRole="ShopProduct" />
+          <NavigationProperty Name="ShopCategoryDefault" Relationship="ShopDataModel.ImageShopCategory1" FromRole="Image" ToRole="ShopCategory" />
+          <Property Type="Int32" Name="IdOnWebStore" Nullable="true" />
+        </EntityType>
+        <Association Name="SupplierProductSupplierImage">
+          <End Type="ShopDataModel.SupplierProduct" Role="SupplierProduct" Multiplicity="0..1" />
+          <End Type="ShopDataModel.Image" Role="SupplierImage" Multiplicity="*" />
+        </Association>
+        <Association Name="SupplierCategorySupplierImage">
+          <End Type="ShopDataModel.SupplierCategory" Role="SupplierCategory" Multiplicity="0..1" />
+          <End Type="ShopDataModel.Image" Role="SupplierImage" Multiplicity="*" />
+        </Association>
+        <Association Name="ImageShopCategory">
+          <End Type="ShopDataModel.Image" Role="Image" Multiplicity="*" />
+          <End Type="ShopDataModel.ShopCategory" Role="ShopCategory" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ImageShopProduct">
+          <End Type="ShopDataModel.Image" Role="Image" Multiplicity="*" />
+          <End Type="ShopDataModel.ShopProduct" Role="ShopProduct" Multiplicity="0..1" />
+        </Association>
+        <Association Name="SupplierCategorySupplierCategory">
+          <End Type="ShopDataModel.SupplierCategory" Role="SupplierCategory" Multiplicity="0..1" />
+          <End Type="ShopDataModel.SupplierCategory" Role="SupplierCategory1" Multiplicity="*" />
+        </Association>
+        <Association Name="SupplierCategorySupplierProduct">
+          <End Type="ShopDataModel.SupplierCategory" Role="SupplierCategory" Multiplicity="0..1" />
+          <End Type="ShopDataModel.SupplierProduct" Role="SupplierProduct" Multiplicity="*" />
+        </Association>
+        <Association Name="SupplierProductImage">
+          <End Type="ShopDataModel.SupplierProduct" Role="SupplierProduct" Multiplicity="0..1" />
+          <End Type="ShopDataModel.Image" Role="Image" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="PropertyHystory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Entity" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Property" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="OldValue" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="NewValue" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="DateUpdate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="EntityId" Nullable="false" />
+        </EntityType>
+        <Association Name="ShopCategoryShopCategory">
+          <End Type="ShopDataModel.ShopCategory" Role="ShopCategory" Multiplicity="0..1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ShopDataModel.ShopCategory" Role="ShopCategory1" Multiplicity="*" />
+        </Association>
+        <Association Name="ShopCategorySupplierCategory">
+          <End Type="ShopDataModel.ShopCategory" Role="ShopCategory" Multiplicity="0..1" />
+          <End Type="ShopDataModel.SupplierCategory" Role="SupplierCategory" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="ImageShopProduct1">
+          <End Type="ShopDataModel.Image" Role="Image" Multiplicity="0..1" />
+          <End Type="ShopDataModel.ShopProduct" Role="ShopProduct" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ImageShopCategory1">
+          <End Type="ShopDataModel.Image" Role="Image" Multiplicity="0..1" />
+          <End Type="ShopDataModel.ShopCategory" Role="ShopCategory" Multiplicity="0..1" />
+        </Association>
+
+     
+        
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShopDataModelStoreContainer" CdmEntityContainer="ShopEntities">
+    <EntitySetMapping Name="SupplierProductSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.SupplierProduct)">
+        <MappingFragment StoreEntitySet="SupplierProductSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IdOnSource" ColumnName="IdOnSource" />
+          <ScalarProperty Name="UriOnSource" ColumnName="UriOnSource" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsSale" ColumnName="IsSale" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.Supplier)">
+        <MappingFragment StoreEntitySet="SupplierSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Uri" ColumnName="Uri" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.SupplierCategory)">
+        <MappingFragment StoreEntitySet="SupplierCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IdOnSource" ColumnName="IdOnSource" />
+          <ScalarProperty Name="UriOnSource" ColumnName="UriOnSource" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShopProductSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.ShopProduct)">
+        <MappingFragment StoreEntitySet="ShopProductSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="IsSale" ColumnName="IsSale" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="InShop" ColumnName="InShop" />
+          <ScalarProperty Name="IdOnWebStore" ColumnName="IdOnWebStore" />
+          <ScalarProperty Name="Unity" ColumnName="Unity" />
+          <ScalarProperty Name="LinkRewrite" ColumnName="LinkRewrite" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShopCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.ShopCategory)">
+        <MappingFragment StoreEntitySet="ShopCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="InShop" ColumnName="InShop" />
+          <ScalarProperty Name="IdOnWebStore" ColumnName="IdOnWebStore" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LinkRewrite" ColumnName="LinkRewrite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.Image)">
+        <MappingFragment StoreEntitySet="ImageSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UriOnSupplier" ColumnName="UriOnSupplier" />
+          <ScalarProperty Name="LocalPath" ColumnName="LocalPath" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="IdOnWebStore" ColumnName="IdOnWebStore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyHystorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.PropertyHystory)">
+        <MappingFragment StoreEntitySet="PropertyHystorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Entity" ColumnName="Entity" />
+          <ScalarProperty Name="Property" ColumnName="Property" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettingsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ShopDataModel.Settings)">
+        <MappingFragment StoreEntitySet="SettingsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SupplierSupplierProduct" TypeName="ShopDataModel.SupplierSupplierProduct" StoreEntitySet="SupplierProductSet">
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Supplier_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierProduct">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierSupplierCategory" TypeName="ShopDataModel.SupplierSupplierCategory" StoreEntitySet="SupplierCategorySet">
+      <EndProperty Name="Supplier">
+        <ScalarProperty Name="Id" ColumnName="Supplier_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierCategory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryProduct" TypeName="ShopDataModel.CategoryProduct" StoreEntitySet="ShopProductSet">
+      <EndProperty Name="Category">
+        <ScalarProperty Name="Id" ColumnName="Category_Id" />
+      </EndProperty>
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierProductProduct" TypeName="ShopDataModel.SupplierProductProduct" StoreEntitySet="SupplierProductSet">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="ShopProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierProduct">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ShopProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierProductSupplierImage" TypeName="ShopDataModel.SupplierProductSupplierImage" StoreEntitySet="ImageSet">
+      <EndProperty Name="SupplierProduct">
+        <ScalarProperty Name="Id" ColumnName="SupplierProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="SupplierProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierCategorySupplierImage" TypeName="ShopDataModel.SupplierCategorySupplierImage" StoreEntitySet="ImageSet">
+      <EndProperty Name="SupplierCategory">
+        <ScalarProperty Name="Id" ColumnName="SupplierCategory_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="SupplierCategory_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImageShopCategory" TypeName="ShopDataModel.ImageShopCategory" StoreEntitySet="ImageSet">
+      <EndProperty Name="ShopCategory">
+        <ScalarProperty Name="Id" ColumnName="ShopCategory_Id" />
+      </EndProperty>
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ShopCategory_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImageShopProduct" TypeName="ShopDataModel.ImageShopProduct" StoreEntitySet="ImageSet">
+      <EndProperty Name="ShopProduct">
+        <ScalarProperty Name="Id" ColumnName="ShopProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ShopProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierCategorySupplierCategory" TypeName="ShopDataModel.SupplierCategorySupplierCategory" StoreEntitySet="SupplierCategorySet">
+      <EndProperty Name="SupplierCategory">
+        <ScalarProperty Name="Id" ColumnName="Parent_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierCategory1">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Parent_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierCategorySupplierProduct" TypeName="ShopDataModel.SupplierCategorySupplierProduct" StoreEntitySet="SupplierProductSet">
+      <EndProperty Name="SupplierCategory">
+        <ScalarProperty Name="Id" ColumnName="Category_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierProduct">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Category_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SupplierProductImage" TypeName="ShopDataModel.SupplierProductImage" StoreEntitySet="ImageSet">
+      <EndProperty Name="SupplierProduct">
+        <ScalarProperty Name="Id" ColumnName="SupplierProductAsDefault_Id" />
+      </EndProperty>
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="SupplierProductAsDefault_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ShopCategoryShopCategory" TypeName="ShopDataModel.ShopCategoryShopCategory" StoreEntitySet="ShopCategorySet">
+      <EndProperty Name="ShopCategory">
+        <ScalarProperty Name="Id" ColumnName="Parent_Id" />
+      </EndProperty>
+      <EndProperty Name="ShopCategory1">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Parent_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ShopCategorySupplierCategory" TypeName="ShopDataModel.ShopCategorySupplierCategory" StoreEntitySet="SupplierCategorySet">
+      <EndProperty Name="ShopCategory">
+        <ScalarProperty Name="Id" ColumnName="ShopCategory_Id" />
+      </EndProperty>
+      <EndProperty Name="SupplierCategory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ShopCategory_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImageShopProduct1" TypeName="ShopDataModel.ImageShopProduct1" StoreEntitySet="ShopProductSet">
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="DefaultImage_Id" />
+      </EndProperty>
+      <EndProperty Name="ShopProduct">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="DefaultImage_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImageShopCategory1" TypeName="ShopDataModel.ImageShopCategory1" StoreEntitySet="ShopCategorySet">
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="DefaultImage_Id" />
+      </EndProperty>
+      <EndProperty Name="ShopCategory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="DefaultImage_Id" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams />
+  </edmx:Designer>
+</edmx:Edmx>

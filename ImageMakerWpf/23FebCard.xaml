@@ -1,0 +1,75 @@
+﻿<Window x:Class="ImageMakerWpf._23FebCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           Title="23FebCard" Height="700" Width="700"  Top="0" Left="0" Cursor="None" >
+    <Grid Name="gridTest">
+        <Image Name="imgProductPhoto" Source="c:\mytemp\SourceImages\1109215.jpg" Margin="30"   />
+        <Canvas Name="canvTest"  >
+
+            <Rectangle Fill="White" Height="70" Width="70" />
+            <Grid Canvas.Left="20" Canvas.Top="20">
+                <Ellipse Height="70" Width="70" Fill="White"  Stroke="#71585d" StrokeThickness="0"/>
+                <Image Source="c:\mytemp\star4.png"  Height="60" Width="70" Margin="0,4,0,6"  />
+
+            </Grid>
+
+            <Grid Canvas.Top="600" Canvas.Left="43">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="154*"/>
+                    <ColumnDefinition Width="25*"/>
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Fill="White"  Stroke="#71585d" StrokeThickness="0" Margin="-3,6,-1,-20" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="2.812"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+
+                </Rectangle>
+                <TextBlock Name="txtTest" Text="Юному Защитнику" FontSize="32"  Foreground="#019309" FontFamily="a_StamperBrk"  />
+            </Grid>
+
+            <TextBlock Name="txtTitle" Text="Назавние товара" FontSize="16" FontFamily="Buxton Sketch"  Foreground="#71585d"  Canvas.Top="637" Canvas.Left="45"/>
+
+
+
+            <!--<Button Name="btnTest" Canvas.Top="10" Height="49" Width="134" Click="Button_Click" Canvas.Left="174">Нажать</Button>-->
+
+            <Ellipse  Canvas.Top="24" Canvas.Left="486"  Height="102" Width="181" RenderTransformOrigin="0.5,0.5" Fill="White" Stroke="#71585d" StrokeThickness="0">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="14.995"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+
+
+            </Ellipse>
+            <Canvas Canvas.Top="41" Canvas.Left="500"  Height="65" Width="160" RenderTransformOrigin="0.5,0.5">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="18.145"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <TextBlock  Text="Всего:" FontSize="14" FontFamily="Berlin Sans FB"  Foreground="#ff0000" FontWeight="Bold" Canvas.Top="12"/>
+                <TextBlock Name="txtPrice" Text="1541,94" FontSize="24" FontFamily="Arial"  Foreground="#71585d" FontWeight="Bold" Canvas.Left="60"/>
+                <Line Name="linePriceOld"
+                    X1="46" Y1="14"
+                    X2="160" Y2="14"
+                    Stroke="#71585d"
+                    StrokeThickness="2" />
+                <TextBlock Name="txtDescountPrice" Text="469,99" FontSize="48" FontFamily="Berlin Sans FB"  Foreground="#ff0000" FontWeight="Bold" Canvas.Top="15"/>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</Window>
+

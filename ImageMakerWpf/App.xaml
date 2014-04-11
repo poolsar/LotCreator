@@ -1,0 +1,8 @@
+﻿<Application x:Class="ImageMakerWpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="23FebCard.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>

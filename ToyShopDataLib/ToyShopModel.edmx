@@ -1,0 +1,1643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ToyShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ToyShopModelStoreContainer">
+    <EntitySet Name="BegemotProductSet" EntityType="ToyShopModel.Store.BegemotProductSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BegemotPriceHistorySet" EntityType="ToyShopModel.Store.BegemotPriceHistorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BegemotCountHistorySet" EntityType="ToyShopModel.Store.BegemotCountHistorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BegemotSaleSet" EntityType="ToyShopModel.Store.BegemotSaleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BegemotSalePriceSet" EntityType="ToyShopModel.Store.BegemotSalePriceSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSet" EntityType="ToyShopModel.Store.ProductSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Adv24auSet" EntityType="ToyShopModel.Store.Adv24auSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StyleSet" EntityType="ToyShopModel.Store.StyleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaleSet" EntityType="ToyShopModel.Store.SaleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MarketplaceSet" EntityType="ToyShopModel.Store.MarketplaceSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCategorySet" EntityType="ToyShopModel.Store.ProductCategorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdvCategorySet" EntityType="ToyShopModel.Store.AdvCategorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductImageSet" EntityType="ToyShopModel.Store.ProductImageSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductImageVersionSet" EntityType="ToyShopModel.Store.ProductImageVersionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdvImageVersionSet" EntityType="ToyShopModel.Store.AdvImageVersionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdvImageSet" EntityType="ToyShopModel.Store.AdvImageSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StyleProduct" EntityType="ToyShopModel.Store.StyleProduct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSale" EntityType="ToyShopModel.Store.ProductSale" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCategoryAdvCategory" EntityType="ToyShopModel.Store.ProductCategoryAdvCategory" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BegemotSaleBegemotSalePrice" Association="ToyShopModel.Store.BegemotSaleBegemotSalePrice">
+      <End Role="BegemotSale" EntitySet="BegemotSaleSet" />
+      <End Role="BegemotSalePrice" EntitySet="BegemotSalePriceSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductAdv24au" Association="ToyShopModel.Store.ProductAdv24au">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="Adv24au" EntitySet="Adv24auSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StyleProduct_Style" Association="ToyShopModel.Store.FK_StyleProduct_Style">
+      <End Role="Style" EntitySet="StyleSet" />
+      <End Role="StyleProduct" EntitySet="StyleProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StyleProduct_Product" Association="ToyShopModel.Store.FK_StyleProduct_Product">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="StyleProduct" EntitySet="StyleProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSale_Product" Association="ToyShopModel.Store.FK_ProductSale_Product">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="ProductSale" EntitySet="ProductSale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSale_Sale" Association="ToyShopModel.Store.FK_ProductSale_Sale">
+      <End Role="Sale" EntitySet="SaleSet" />
+      <End Role="ProductSale" EntitySet="ProductSale" />
+    </AssociationSet>
+    <AssociationSet Name="StyleSale" Association="ToyShopModel.Store.StyleSale">
+      <End Role="Style" EntitySet="StyleSet" />
+      <End Role="Sale" EntitySet="SaleSet" />
+    </AssociationSet>
+    <AssociationSet Name="StyleMarketplace" Association="ToyShopModel.Store.StyleMarketplace">
+      <End Role="Style" EntitySet="StyleSet" />
+      <End Role="Marketplace" EntitySet="MarketplaceSet" />
+    </AssociationSet>
+    <AssociationSet Name="MarketplaceAdv24au" Association="ToyShopModel.Store.MarketplaceAdv24au">
+      <End Role="Marketplace" EntitySet="MarketplaceSet" />
+      <End Role="Adv24au" EntitySet="Adv24auSet" />
+    </AssociationSet>
+    <AssociationSet Name="AdvCategoryAdv24au" Association="ToyShopModel.Store.AdvCategoryAdv24au">
+      <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+      <End Role="Adv24au" EntitySet="Adv24auSet" />
+    </AssociationSet>
+    <AssociationSet Name="MarketplaceAdvCategory" Association="ToyShopModel.Store.MarketplaceAdvCategory">
+      <End Role="Marketplace" EntitySet="MarketplaceSet" />
+      <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCategoryProductCategory" Association="ToyShopModel.Store.ProductCategoryProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategorySet" />
+      <End Role="ProductCategory1" EntitySet="ProductCategorySet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCategoryProduct" Association="ToyShopModel.Store.ProductCategoryProduct">
+      <End Role="ProductCategory" EntitySet="ProductCategorySet" />
+      <End Role="Product" EntitySet="ProductSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategoryAdvCategory_ProductCategory" Association="ToyShopModel.Store.FK_ProductCategoryAdvCategory_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategorySet" />
+      <End Role="ProductCategoryAdvCategory" EntitySet="ProductCategoryAdvCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategoryAdvCategory_AdvCategory" Association="ToyShopModel.Store.FK_ProductCategoryAdvCategory_AdvCategory">
+      <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+      <End Role="ProductCategoryAdvCategory" EntitySet="ProductCategoryAdvCategory" />
+    </AssociationSet>
+    <AssociationSet Name="AdvCategoryAdvCategory" Association="ToyShopModel.Store.AdvCategoryAdvCategory">
+      <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+      <End Role="AdvCategory1" EntitySet="AdvCategorySet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductImageProductImageVersion" Association="ToyShopModel.Store.ProductImageProductImageVersion">
+      <End Role="ProductImage" EntitySet="ProductImageSet" />
+      <End Role="ProductImageVersion" EntitySet="ProductImageVersionSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductImageVersionProductImage" Association="ToyShopModel.Store.ProductImageVersionProductImage">
+      <End Role="ProductImageVersion" EntitySet="ProductImageVersionSet" />
+      <End Role="ProductImage" EntitySet="ProductImageSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductProductImage" Association="ToyShopModel.Store.ProductProductImage">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="ProductImage" EntitySet="ProductImageSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductImageVersionAdvImageVersion" Association="ToyShopModel.Store.ProductImageVersionAdvImageVersion">
+      <End Role="ProductImageVersion" EntitySet="ProductImageVersionSet" />
+      <End Role="AdvImageVersion" EntitySet="AdvImageVersionSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductImageAdvImage" Association="ToyShopModel.Store.ProductImageAdvImage">
+      <End Role="ProductImage" EntitySet="ProductImageSet" />
+      <End Role="AdvImage" EntitySet="AdvImageSet" />
+    </AssociationSet>
+    <AssociationSet Name="Adv24auAdvImage" Association="ToyShopModel.Store.Adv24auAdvImage">
+      <End Role="Adv24au" EntitySet="Adv24auSet" />
+      <End Role="AdvImage" EntitySet="AdvImageSet" />
+    </AssociationSet>
+    <AssociationSet Name="AdvImageAdvImageVersion" Association="ToyShopModel.Store.AdvImageAdvImageVersion">
+      <End Role="AdvImage" EntitySet="AdvImageSet" />
+      <End Role="AdvImageVersion" EntitySet="AdvImageVersionSet" />
+    </AssociationSet>
+    <AssociationSet Name="AdvImageVersionAdvImage" Association="ToyShopModel.Store.AdvImageVersionAdvImage">
+      <End Role="AdvImageVersion" EntitySet="AdvImageVersionSet" />
+      <End Role="AdvImage" EntitySet="AdvImageSet" />
+    </AssociationSet>
+    <AssociationSet Name="BegemotProductProduct" Association="ToyShopModel.Store.BegemotProductProduct">
+      <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+      <End Role="Product" EntitySet="ProductSet" />
+    </AssociationSet>
+    <AssociationSet Name="BegemotProductBegemotSalePrice" Association="ToyShopModel.Store.BegemotProductBegemotSalePrice">
+      <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+      <End Role="BegemotSalePrice" EntitySet="BegemotSalePriceSet" />
+    </AssociationSet>
+    <AssociationSet Name="BegemotProductBegemotPriceHistory" Association="ToyShopModel.Store.BegemotProductBegemotPriceHistory">
+      <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+      <End Role="BegemotPriceHistory" EntitySet="BegemotPriceHistorySet" />
+    </AssociationSet>
+    <AssociationSet Name="BegemotProductBegemotCountHistory" Association="ToyShopModel.Store.BegemotProductBegemotCountHistory">
+      <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+      <End Role="BegemotCountHistory" EntitySet="BegemotCountHistorySet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BegemotProductSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Group" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Group1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Group2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Article" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NDS" Type="int" Nullable="false" />
+    <Property Name="CountPerBlock" Type="int" Nullable="false" />
+    <Property Name="CountPerBox" Type="int" Nullable="false" />
+    <Property Name="RetailPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="WholeSalePrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="Descrption" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ImagePath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="CopyInfo" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BegemotPriceHistorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Article" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RetailPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="WholeSalePrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="DateCreate" Type="datetime" Nullable="false" />
+    <Property Name="BegemotProduct_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BegemotCountHistorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Article" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="DateCreate" Type="datetime" Nullable="false" />
+    <Property Name="BegemotProduct_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BegemotSaleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateStart" Type="datetime" Nullable="false" />
+    <Property Name="DateStop" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BegemotSalePriceSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Article" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RetailPrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="WholeSalePrice" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="RetailPriceOld" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="WholeSalePriceOld" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="BegemotSale_Id" Type="int" Nullable="false" />
+    <Property Name="BegemotProduct_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ProductSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="PriceOld" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Article" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="ImgPricePosition" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="BRetailPrice" Type="decimal" Nullable="true" />
+    <Property Name="BWholeSalePrice" Type="decimal" Nullable="true" />
+    <Property Name="BCount" Type="int" Nullable="true" />
+    <Property Name="Category_Id" Type="int" Nullable="true" />
+    <Property Name="BegemotProduct_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Adv24auSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateExpire" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+    <Property Name="Days" Type="int" Nullable="false" />
+    <Property Name="Published" Type="bit" Nullable="false" />
+    <Property Name="MrkCategory" Type="int" Nullable="false" />
+    <Property Name="LinkRewrite" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+    <Property Name="Marketplace_Id" Type="int" Nullable="true" />
+    <Property Name="Category_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StyleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Header" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Footer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShowCaseStyle" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DefMrkCategory" Type="int" Nullable="false" />
+    <Property Name="Marketplace_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SaleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateStart" Type="datetime" Nullable="false" />
+    <Property Name="DateExpire" Type="datetime" Nullable="false" />
+    <Property Name="Algoritm" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MarginMin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MarginMax" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MarginToWholesale" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DescountToRetail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UseMaxResult" Type="bit" Nullable="false" />
+    <Property Name="Style_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MarketplaceSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" DefaultValue="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" DefaultValue="" />
+    <Property Name="Parent_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AdvCategorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="true" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" DefaultValue="" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="Published" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="LinkRewrite" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Marketplace_Id" Type="int" Nullable="false" />
+    <Property Name="Parent_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ProductImageSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="SourcePath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="UseSource" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="IsNoImage" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="PricePosition" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="CurrentVersion_Id" Type="int" Nullable="true" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductImageVersionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PriceNew" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="PriceOld" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Style" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="ProductImage_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdvImageVersionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="nvarchar(max)" Nullable="false" DefaultValue="" />
+    <Property Name="ProductImageVersion_Id" Type="int" Nullable="false" />
+    <Property Name="AdvImage_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdvImageSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="ProductImage_Id" Type="int" Nullable="false" />
+    <Property Name="Adv24au_Id" Type="int" Nullable="false" />
+    <Property Name="CurrentVersion_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StyleProduct">
+    <Key>
+      <PropertyRef Name="SpecialStyle_Id" />
+      <PropertyRef Name="Products_Id" />
+    </Key>
+    <Property Name="SpecialStyle_Id" Type="int" Nullable="false" />
+    <Property Name="Products_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSale">
+    <Key>
+      <PropertyRef Name="Products_Id" />
+      <PropertyRef Name="Sales_Id" />
+    </Key>
+    <Property Name="Products_Id" Type="int" Nullable="false" />
+    <Property Name="Sales_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategoryAdvCategory">
+    <Key>
+      <PropertyRef Name="ProductCategories_Id" />
+      <PropertyRef Name="AdvCategories_Id" />
+    </Key>
+    <Property Name="ProductCategories_Id" Type="int" Nullable="false" />
+    <Property Name="AdvCategories_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="BegemotSaleBegemotSalePrice">
+    <End Role="BegemotSale" Type="ToyShopModel.Store.BegemotSaleSet" Multiplicity="1" />
+    <End Role="BegemotSalePrice" Type="ToyShopModel.Store.BegemotSalePriceSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BegemotSale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BegemotSalePrice">
+        <PropertyRef Name="BegemotSale_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductAdv24au">
+    <End Role="Product" Type="ToyShopModel.Store.ProductSet" Multiplicity="1" />
+    <End Role="Adv24au" Type="ToyShopModel.Store.Adv24auSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv24au">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StyleSale">
+    <End Role="Style" Type="ToyShopModel.Store.StyleSet" Multiplicity="0..1" />
+    <End Role="Sale" Type="ToyShopModel.Store.SaleSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Style">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="Style_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StyleMarketplace">
+    <End Role="Style" Type="ToyShopModel.Store.StyleSet" Multiplicity="*" />
+    <End Role="Marketplace" Type="ToyShopModel.Store.MarketplaceSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Marketplace">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Style">
+        <PropertyRef Name="Marketplace_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarketplaceAdv24au">
+    <End Role="Marketplace" Type="ToyShopModel.Store.MarketplaceSet" Multiplicity="0..1" />
+    <End Role="Adv24au" Type="ToyShopModel.Store.Adv24auSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marketplace">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv24au">
+        <PropertyRef Name="Marketplace_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdvCategoryAdv24au">
+    <End Role="AdvCategory" Type="ToyShopModel.Store.AdvCategorySet" Multiplicity="0..1" />
+    <End Role="Adv24au" Type="ToyShopModel.Store.Adv24auSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Adv24au">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarketplaceAdvCategory">
+    <End Role="Marketplace" Type="ToyShopModel.Store.MarketplaceSet" Multiplicity="1" />
+    <End Role="AdvCategory" Type="ToyShopModel.Store.AdvCategorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marketplace">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvCategory">
+        <PropertyRef Name="Marketplace_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCategoryProductCategory">
+    <End Role="ProductCategory" Type="ToyShopModel.Store.ProductCategorySet" Multiplicity="0..1" />
+    <End Role="ProductCategory1" Type="ToyShopModel.Store.ProductCategorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory1">
+        <PropertyRef Name="Parent_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCategoryProduct">
+    <End Role="ProductCategory" Type="ToyShopModel.Store.ProductCategorySet" Multiplicity="0..1" />
+    <End Role="Product" Type="ToyShopModel.Store.ProductSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Category_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdvCategoryAdvCategory">
+    <End Role="AdvCategory" Type="ToyShopModel.Store.AdvCategorySet" Multiplicity="0..1" />
+    <End Role="AdvCategory1" Type="ToyShopModel.Store.AdvCategorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvCategory1">
+        <PropertyRef Name="Parent_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductImageProductImageVersion">
+    <End Role="ProductImage" Type="ToyShopModel.Store.ProductImageSet" Multiplicity="1" />
+    <End Role="ProductImageVersion" Type="ToyShopModel.Store.ProductImageVersionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImageVersion">
+        <PropertyRef Name="ProductImage_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductImageVersionProductImage">
+    <End Role="ProductImageVersion" Type="ToyShopModel.Store.ProductImageVersionSet" Multiplicity="0..1" />
+    <End Role="ProductImage" Type="ToyShopModel.Store.ProductImageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImageVersion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="CurrentVersion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductProductImage">
+    <End Role="Product" Type="ToyShopModel.Store.ProductSet" Multiplicity="1" />
+    <End Role="ProductImage" Type="ToyShopModel.Store.ProductImageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductImageVersionAdvImageVersion">
+    <End Role="ProductImageVersion" Type="ToyShopModel.Store.ProductImageVersionSet" Multiplicity="1" />
+    <End Role="AdvImageVersion" Type="ToyShopModel.Store.AdvImageVersionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImageVersion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvImageVersion">
+        <PropertyRef Name="ProductImageVersion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductImageAdvImage">
+    <End Role="ProductImage" Type="ToyShopModel.Store.ProductImageSet" Multiplicity="1" />
+    <End Role="AdvImage" Type="ToyShopModel.Store.AdvImageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvImage">
+        <PropertyRef Name="ProductImage_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Adv24auAdvImage">
+    <End Role="Adv24au" Type="ToyShopModel.Store.Adv24auSet" Multiplicity="1" />
+    <End Role="AdvImage" Type="ToyShopModel.Store.AdvImageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adv24au">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvImage">
+        <PropertyRef Name="Adv24au_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdvImageAdvImageVersion">
+    <End Role="AdvImage" Type="ToyShopModel.Store.AdvImageSet" Multiplicity="1" />
+    <End Role="AdvImageVersion" Type="ToyShopModel.Store.AdvImageVersionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvImage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvImageVersion">
+        <PropertyRef Name="AdvImage_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdvImageVersionAdvImage">
+    <End Role="AdvImageVersion" Type="ToyShopModel.Store.AdvImageVersionSet" Multiplicity="0..1" />
+    <End Role="AdvImage" Type="ToyShopModel.Store.AdvImageSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdvImageVersion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AdvImage">
+        <PropertyRef Name="CurrentVersion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BegemotProductProduct">
+    <End Role="BegemotProduct" Type="ToyShopModel.Store.BegemotProductSet" Multiplicity="0..1" />
+    <End Role="Product" Type="ToyShopModel.Store.ProductSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BegemotProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="BegemotProduct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BegemotProductBegemotSalePrice">
+    <End Role="BegemotProduct" Type="ToyShopModel.Store.BegemotProductSet" Multiplicity="0..1" />
+    <End Role="BegemotSalePrice" Type="ToyShopModel.Store.BegemotSalePriceSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BegemotProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BegemotSalePrice">
+        <PropertyRef Name="BegemotProduct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BegemotProductBegemotPriceHistory">
+    <End Role="BegemotProduct" Type="ToyShopModel.Store.BegemotProductSet" Multiplicity="0..1" />
+    <End Role="BegemotPriceHistory" Type="ToyShopModel.Store.BegemotPriceHistorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BegemotProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BegemotPriceHistory">
+        <PropertyRef Name="BegemotProduct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BegemotProductBegemotCountHistory">
+    <End Role="BegemotProduct" Type="ToyShopModel.Store.BegemotProductSet" Multiplicity="0..1" />
+    <End Role="BegemotCountHistory" Type="ToyShopModel.Store.BegemotCountHistorySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BegemotProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BegemotCountHistory">
+        <PropertyRef Name="BegemotProduct_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StyleProduct_Style">
+    <End Role="Style" Type="ToyShopModel.Store.StyleSet" Multiplicity="1" />
+    <End Role="StyleProduct" Type="ToyShopModel.Store.StyleProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Style">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StyleProduct">
+        <PropertyRef Name="SpecialStyle_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StyleProduct_Product">
+    <End Role="StyleProduct" Type="ToyShopModel.Store.StyleProduct" Multiplicity="*" />
+    <End Role="Product" Type="ToyShopModel.Store.ProductSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StyleProduct">
+        <PropertyRef Name="Products_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSale_Product">
+    <End Role="Product" Type="ToyShopModel.Store.ProductSet" Multiplicity="1" />
+    <End Role="ProductSale" Type="ToyShopModel.Store.ProductSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductSale">
+        <PropertyRef Name="Products_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSale_Sale">
+    <End Role="ProductSale" Type="ToyShopModel.Store.ProductSale" Multiplicity="*" />
+    <End Role="Sale" Type="ToyShopModel.Store.SaleSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductSale">
+        <PropertyRef Name="Sales_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategoryAdvCategory_ProductCategory">
+    <End Role="ProductCategory" Type="ToyShopModel.Store.ProductCategorySet" Multiplicity="1" />
+    <End Role="ProductCategoryAdvCategory" Type="ToyShopModel.Store.ProductCategoryAdvCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategoryAdvCategory">
+        <PropertyRef Name="ProductCategories_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategoryAdvCategory_AdvCategory">
+    <End Role="ProductCategoryAdvCategory" Type="ToyShopModel.Store.ProductCategoryAdvCategory" Multiplicity="*" />
+    <End Role="AdvCategory" Type="ToyShopModel.Store.AdvCategorySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AdvCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategoryAdvCategory">
+        <PropertyRef Name="AdvCategories_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ToyShopModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ToyShopModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BegemotProductSet" EntityType="ToyShopModel.BegemotProduct" />
+          <EntitySet Name="BegemotPriceHistorySet" EntityType="ToyShopModel.BegemotPriceHistory" />
+          <EntitySet Name="BegemotCountHistorySet" EntityType="ToyShopModel.BegemotCountHistory" />
+          <EntitySet Name="BegemotSaleSet" EntityType="ToyShopModel.BegemotSale" />
+          <EntitySet Name="BegemotSalePriceSet" EntityType="ToyShopModel.BegemotSalePrice" />
+          <AssociationSet Name="BegemotSaleBegemotSalePrice" Association="ToyShopModel.BegemotSaleBegemotSalePrice">
+            <End Role="BegemotSale" EntitySet="BegemotSaleSet" />
+            <End Role="BegemotSalePrice" EntitySet="BegemotSalePriceSet" />
+          </AssociationSet>
+          <EntitySet Name="ProductSet" EntityType="ToyShopModel.Product" />
+          <EntitySet Name="Adv24auSet" EntityType="ToyShopModel.Adv24au" />
+          <AssociationSet Name="ProductAdv24au" Association="ToyShopModel.ProductAdv24au">
+            <End Role="Product" EntitySet="ProductSet" />
+            <End Role="Adv24au" EntitySet="Adv24auSet" />
+          </AssociationSet>
+          <EntitySet Name="StyleSet" EntityType="ToyShopModel.Style" />
+          <EntitySet Name="SaleSet" EntityType="ToyShopModel.Sale" />
+          <EntitySet Name="MarketplaceSet" EntityType="ToyShopModel.Marketplace" />
+          <AssociationSet Name="StyleProduct" Association="ToyShopModel.StyleProduct">
+            <End Role="Style" EntitySet="StyleSet" />
+            <End Role="Product" EntitySet="ProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductSale" Association="ToyShopModel.ProductSale">
+            <End Role="Product" EntitySet="ProductSet" />
+            <End Role="Sale" EntitySet="SaleSet" />
+          </AssociationSet>
+          <AssociationSet Name="StyleSale" Association="ToyShopModel.StyleSale">
+            <End Role="Style" EntitySet="StyleSet" />
+            <End Role="Sale" EntitySet="SaleSet" />
+          </AssociationSet>
+          <AssociationSet Name="StyleMarketplace" Association="ToyShopModel.StyleMarketplace">
+            <End Role="Style" EntitySet="StyleSet" />
+            <End Role="Marketplace" EntitySet="MarketplaceSet" />
+          </AssociationSet>
+          <AssociationSet Name="MarketplaceAdv24au" Association="ToyShopModel.MarketplaceAdv24au">
+            <End Role="Marketplace" EntitySet="MarketplaceSet" />
+            <End Role="Adv24au" EntitySet="Adv24auSet" />
+          </AssociationSet>
+          <EntitySet Name="ProductCategorySet" EntityType="ToyShopModel.ProductCategory" />
+          <EntitySet Name="AdvCategorySet" EntityType="ToyShopModel.AdvCategory" />
+          <AssociationSet Name="AdvCategoryAdv24au" Association="ToyShopModel.AdvCategoryAdv24au">
+            <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+            <End Role="Adv24au" EntitySet="Adv24auSet" />
+          </AssociationSet>
+          <AssociationSet Name="MarketplaceAdvCategory" Association="ToyShopModel.MarketplaceAdvCategory">
+            <End Role="Marketplace" EntitySet="MarketplaceSet" />
+            <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCategoryProductCategory" Association="ToyShopModel.ProductCategoryProductCategory">
+            <End Role="ProductCategory" EntitySet="ProductCategorySet" />
+            <End Role="ProductCategory1" EntitySet="ProductCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCategoryProduct" Association="ToyShopModel.ProductCategoryProduct">
+            <End Role="ProductCategory" EntitySet="ProductCategorySet" />
+            <End Role="Product" EntitySet="ProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCategoryAdvCategory" Association="ToyShopModel.ProductCategoryAdvCategory">
+            <End Role="ProductCategory" EntitySet="ProductCategorySet" />
+            <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+          </AssociationSet>
+          <AssociationSet Name="AdvCategoryAdvCategory" Association="ToyShopModel.AdvCategoryAdvCategory">
+            <End Role="AdvCategory" EntitySet="AdvCategorySet" />
+            <End Role="AdvCategory1" EntitySet="AdvCategorySet" />
+          </AssociationSet>
+          <EntitySet Name="ProductImageSet" EntityType="ToyShopModel.ProductImage" />
+          <EntitySet Name="ProductImageVersionSet" EntityType="ToyShopModel.ProductImageVersion" />
+          <AssociationSet Name="ProductImageProductImageVersion" Association="ToyShopModel.ProductImageProductImageVersion">
+            <End Role="ProductImage" EntitySet="ProductImageSet" />
+            <End Role="ProductImageVersion" EntitySet="ProductImageVersionSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductImageVersionProductImage" Association="ToyShopModel.ProductImageVersionProductImage">
+            <End Role="ProductImageVersion" EntitySet="ProductImageVersionSet" />
+            <End Role="ProductImage" EntitySet="ProductImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductProductImage" Association="ToyShopModel.ProductProductImage">
+            <End Role="Product" EntitySet="ProductSet" />
+            <End Role="ProductImage" EntitySet="ProductImageSet" />
+          </AssociationSet>
+          <EntitySet Name="AdvImageVersionSet" EntityType="ToyShopModel.AdvImageVersion" />
+          <AssociationSet Name="ProductImageVersionAdvImageVersion" Association="ToyShopModel.ProductImageVersionAdvImageVersion">
+            <End Role="ProductImageVersion" EntitySet="ProductImageVersionSet" />
+            <End Role="AdvImageVersion" EntitySet="AdvImageVersionSet" />
+          </AssociationSet>
+          <EntitySet Name="AdvImageSet" EntityType="ToyShopModel.AdvImage" />
+          <AssociationSet Name="ProductImageAdvImage" Association="ToyShopModel.ProductImageAdvImage">
+            <End Role="ProductImage" EntitySet="ProductImageSet" />
+            <End Role="AdvImage" EntitySet="AdvImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="Adv24auAdvImage" Association="ToyShopModel.Adv24auAdvImage">
+            <End Role="Adv24au" EntitySet="Adv24auSet" />
+            <End Role="AdvImage" EntitySet="AdvImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="AdvImageAdvImageVersion" Association="ToyShopModel.AdvImageAdvImageVersion">
+            <End Role="AdvImage" EntitySet="AdvImageSet" />
+            <End Role="AdvImageVersion" EntitySet="AdvImageVersionSet" />
+          </AssociationSet>
+          <AssociationSet Name="AdvImageVersionAdvImage" Association="ToyShopModel.AdvImageVersionAdvImage">
+            <End Role="AdvImageVersion" EntitySet="AdvImageVersionSet" />
+            <End Role="AdvImage" EntitySet="AdvImageSet" />
+          </AssociationSet>
+          <AssociationSet Name="BegemotProductProduct" Association="ToyShopModel.BegemotProductProduct">
+            <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+            <End Role="Product" EntitySet="ProductSet" />
+          </AssociationSet>
+          <AssociationSet Name="BegemotProductBegemotSalePrice" Association="ToyShopModel.BegemotProductBegemotSalePrice">
+            <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+            <End Role="BegemotSalePrice" EntitySet="BegemotSalePriceSet" />
+          </AssociationSet>
+          <AssociationSet Name="BegemotProductBegemotPriceHistory" Association="ToyShopModel.BegemotProductBegemotPriceHistory">
+            <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+            <End Role="BegemotPriceHistory" EntitySet="BegemotPriceHistorySet" />
+          </AssociationSet>
+          <AssociationSet Name="BegemotProductBegemotCountHistory" Association="ToyShopModel.BegemotProductBegemotCountHistory">
+            <End Role="BegemotProduct" EntitySet="BegemotProductSet" />
+            <End Role="BegemotCountHistory" EntitySet="BegemotCountHistorySet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BegemotProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Group" Nullable="false" />
+          <Property Type="String" Name="Group1" Nullable="false" />
+          <Property Type="String" Name="Group2" Nullable="false" />
+          <Property Type="String" Name="Article" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Brand" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="false" />
+          <Property Type="Int32" Name="NDS" Nullable="false" />
+          <Property Type="Int32" Name="CountPerBlock" Nullable="false" />
+          <Property Type="Int32" Name="CountPerBox" Nullable="false" />
+          <Property Type="Decimal" Name="RetailPrice" Nullable="false" Scale="2" />
+          <Property Type="Decimal" Name="WholeSalePrice" Nullable="false" Scale="2" />
+          <Property Type="Int32" Name="Count" Nullable="false" />
+          <Property Type="String" Name="Descrption" Nullable="true" />
+          <Property Type="String" Name="ImagePath" Nullable="true" />
+          <Property Type="DateTime" Name="DateUpdate" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="String" Name="CopyInfo" Nullable="true" />
+          <NavigationProperty Name="Product" Relationship="ToyShopModel.BegemotProductProduct" FromRole="BegemotProduct" ToRole="Product" />
+          <NavigationProperty Name="BegemotSalePrice" Relationship="ToyShopModel.BegemotProductBegemotSalePrice" FromRole="BegemotProduct" ToRole="BegemotSalePrice" />
+          <NavigationProperty Name="BegemotPriceHistory" Relationship="ToyShopModel.BegemotProductBegemotPriceHistory" FromRole="BegemotProduct" ToRole="BegemotPriceHistory" />
+          <NavigationProperty Name="BegemotCountHistory" Relationship="ToyShopModel.BegemotProductBegemotCountHistory" FromRole="BegemotProduct" ToRole="BegemotCountHistory" />
+        </EntityType>
+        <EntityType Name="BegemotPriceHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Article" Nullable="false" />
+          <Property Type="Decimal" Name="RetailPrice" Nullable="false" Scale="2" />
+          <Property Type="Decimal" Name="WholeSalePrice" Nullable="false" Scale="2" />
+          <Property Type="DateTime" Name="DateCreate" Nullable="false" />
+          <NavigationProperty Name="BegemotProduct" Relationship="ToyShopModel.BegemotProductBegemotPriceHistory" FromRole="BegemotPriceHistory" ToRole="BegemotProduct" />
+        </EntityType>
+        <EntityType Name="BegemotCountHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Article" Nullable="false" />
+          <Property Type="Int32" Name="Count" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreate" Nullable="false" />
+          <NavigationProperty Name="BegemotProduct" Relationship="ToyShopModel.BegemotProductBegemotCountHistory" FromRole="BegemotCountHistory" ToRole="BegemotProduct" />
+        </EntityType>
+        <EntityType Name="BegemotSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="DateTime" Name="DateStart" Nullable="false" />
+          <Property Type="DateTime" Name="DateStop" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <NavigationProperty Name="BegemotSalePrice" Relationship="ToyShopModel.BegemotSaleBegemotSalePrice" FromRole="BegemotSale" ToRole="BegemotSalePrice" />
+        </EntityType>
+        <EntityType Name="BegemotSalePrice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Article" Nullable="false" />
+          <Property Type="Decimal" Name="RetailPrice" Nullable="false" Scale="2" />
+          <Property Type="Decimal" Name="WholeSalePrice" Nullable="false" Scale="2" />
+          <NavigationProperty Name="BegemotSale" Relationship="ToyShopModel.BegemotSaleBegemotSalePrice" FromRole="BegemotSalePrice" ToRole="BegemotSale" />
+          <Property Type="Decimal" Name="RetailPriceOld" Nullable="false" Scale="2" />
+          <Property Type="Decimal" Name="WholeSalePriceOld" Nullable="false" Scale="2" />
+          <NavigationProperty Name="BegemotProduct" Relationship="ToyShopModel.BegemotProductBegemotSalePrice" FromRole="BegemotSalePrice" ToRole="BegemotProduct" />
+        </EntityType>
+        <Association Name="BegemotSaleBegemotSalePrice">
+          <End Type="ToyShopModel.BegemotSale" Role="BegemotSale" Multiplicity="1" />
+          <End Type="ToyShopModel.BegemotSalePrice" Role="BegemotSalePrice" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Scale="2" />
+          <Property Type="Decimal" Name="PriceOld" Nullable="false" Scale="2" />
+          <Property Type="String" Name="Article" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <NavigationProperty Name="Advs" Relationship="ToyShopModel.ProductAdv24au" FromRole="Product" ToRole="Adv24au" />
+          <NavigationProperty Name="SpecialStyle" Relationship="ToyShopModel.StyleProduct" FromRole="Product" ToRole="Style" />
+          <NavigationProperty Name="Sales" Relationship="ToyShopModel.ProductSale" FromRole="Product" ToRole="Sale" />
+          <Property Type="Int32" Name="ImgPricePosition" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="Category" Relationship="ToyShopModel.ProductCategoryProduct" FromRole="Product" ToRole="ProductCategory" />
+          <Property Type="Decimal" Name="BRetailPrice" Nullable="true" />
+          <Property Type="Decimal" Name="BWholeSalePrice" Nullable="true" />
+          <Property Type="Int32" Name="BCount" Nullable="true" />
+          <NavigationProperty Name="Images" Relationship="ToyShopModel.ProductProductImage" FromRole="Product" ToRole="ProductImage" />
+          <NavigationProperty Name="BegemotProduct" Relationship="ToyShopModel.BegemotProductProduct" FromRole="Product" ToRole="BegemotProduct" />
+        </EntityType>
+        <EntityType Name="Adv24au">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Product" Relationship="ToyShopModel.ProductAdv24au" FromRole="Adv24au" ToRole="Product" />
+          <Property Type="Int32" Name="Number" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Decimal" Name="Price" Nullable="false" />
+          <Property Type="String" Name="Image" Nullable="false" />
+          <Property Type="DateTime" Name="DateExpire" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <NavigationProperty Name="Marketplace" Relationship="ToyShopModel.MarketplaceAdv24au" FromRole="Adv24au" ToRole="Marketplace" />
+          <Property Type="DateTime" Name="DateUpdate" Nullable="false" />
+          <Property Type="Int32" Name="Days" Nullable="false" />
+          <Property Type="Boolean" Name="Published" Nullable="false" />
+          <Property Type="Int32" Name="MrkCategory" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="ToyShopModel.AdvCategoryAdv24au" FromRole="Adv24au" ToRole="AdvCategory" />
+          <Property Type="String" Name="LinkRewrite" Nullable="true" />
+          <NavigationProperty Name="AdvImages" Relationship="ToyShopModel.Adv24auAdvImage" FromRole="Adv24au" ToRole="AdvImage" />
+        </EntityType>
+        <Association Name="ProductAdv24au">
+          <End Type="ToyShopModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="ToyShopModel.Adv24au" Role="Adv24au" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Style">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Header" Nullable="false" />
+          <Property Type="String" Name="Content" Nullable="false" />
+          <Property Type="String" Name="Footer" Nullable="false" />
+          <Property Type="Int32" Name="ShowCaseStyle" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="ToyShopModel.StyleProduct" FromRole="Style" ToRole="Product" />
+          <NavigationProperty Name="Sales" Relationship="ToyShopModel.StyleSale" FromRole="Style" ToRole="Sale" />
+          <NavigationProperty Name="Marketplace" Relationship="ToyShopModel.StyleMarketplace" FromRole="Style" ToRole="Marketplace" />
+          <Property Type="DateTime" Name="DateUpdate" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="DefMrkCategory" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateStart" Nullable="false" />
+          <Property Type="DateTime" Name="DateExpire" Nullable="false" />
+          <Property Type="String" Name="Algoritm" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="ToyShopModel.ProductSale" FromRole="Sale" ToRole="Product" />
+          <NavigationProperty Name="Style" Relationship="ToyShopModel.StyleSale" FromRole="Sale" ToRole="Style" />
+          <Property Type="DateTime" Name="DateUpdate" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="String" Name="MarginMin" Nullable="false" />
+          <Property Type="String" Name="MarginMax" Nullable="false" />
+          <Property Type="String" Name="MarginToWholesale" Nullable="false" />
+          <Property Type="String" Name="DescountToRetail" Nullable="false" />
+          <Property Type="Boolean" Name="UseMaxResult" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marketplace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Url" Nullable="false" />
+          <NavigationProperty Name="Styles" Relationship="ToyShopModel.StyleMarketplace" FromRole="Marketplace" ToRole="Style" />
+          <NavigationProperty Name="Advs" Relationship="ToyShopModel.MarketplaceAdv24au" FromRole="Marketplace" ToRole="Adv24au" />
+          <Property Type="Boolean" Name="Active" Nullable="false" DefaultValue="true" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="AdvCategory" Relationship="ToyShopModel.MarketplaceAdvCategory" FromRole="Marketplace" ToRole="AdvCategory" />
+        </EntityType>
+        <Association Name="StyleProduct">
+          <End Type="ToyShopModel.Style" Role="Style" Multiplicity="*" />
+          <End Type="ToyShopModel.Product" Role="Product" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductSale">
+          <End Type="ToyShopModel.Product" Role="Product" Multiplicity="*" />
+          <End Type="ToyShopModel.Sale" Role="Sale" Multiplicity="*" />
+        </Association>
+        <Association Name="StyleSale">
+          <End Type="ToyShopModel.Style" Role="Style" Multiplicity="0..1" />
+          <End Type="ToyShopModel.Sale" Role="Sale" Multiplicity="*" />
+        </Association>
+        <Association Name="StyleMarketplace">
+          <End Type="ToyShopModel.Style" Role="Style" Multiplicity="*" />
+          <End Type="ToyShopModel.Marketplace" Role="Marketplace" Multiplicity="0..1" />
+        </Association>
+        <Association Name="MarketplaceAdv24au">
+          <End Type="ToyShopModel.Marketplace" Role="Marketplace" Multiplicity="0..1" />
+          <End Type="ToyShopModel.Adv24au" Role="Adv24au" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" DefaultValue="" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Childs" Relationship="ToyShopModel.ProductCategoryProductCategory" FromRole="ProductCategory" ToRole="ProductCategory1" />
+          <NavigationProperty Name="Parent" Relationship="ToyShopModel.ProductCategoryProductCategory" FromRole="ProductCategory1" ToRole="ProductCategory" />
+          <NavigationProperty Name="Products" Relationship="ToyShopModel.ProductCategoryProduct" FromRole="ProductCategory" ToRole="Product" />
+          <NavigationProperty Name="AdvCategories" Relationship="ToyShopModel.ProductCategoryAdvCategory" FromRole="ProductCategory" ToRole="AdvCategory" />
+          </EntityType>
+        <EntityType Name="AdvCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Number" Nullable="true" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" DefaultValue="" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image" Nullable="false" DefaultValue="" />
+          <Property Type="Boolean" Name="Published" Nullable="false" DefaultValue="false" />
+          <Property Type="String" Name="LinkRewrite" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Advs" Relationship="ToyShopModel.AdvCategoryAdv24au" FromRole="AdvCategory" ToRole="Adv24au" />
+          <NavigationProperty Name="Marketplace" Relationship="ToyShopModel.MarketplaceAdvCategory" FromRole="AdvCategory" ToRole="Marketplace" />
+          <NavigationProperty Name="ProductCategories" Relationship="ToyShopModel.ProductCategoryAdvCategory" FromRole="AdvCategory" ToRole="ProductCategory" />
+          <NavigationProperty Name="Childs" Relationship="ToyShopModel.AdvCategoryAdvCategory" FromRole="AdvCategory" ToRole="AdvCategory1" />
+          <NavigationProperty Name="Parent" Relationship="ToyShopModel.AdvCategoryAdvCategory" FromRole="AdvCategory1" ToRole="AdvCategory" />
+          </EntityType>
+        <Association Name="AdvCategoryAdv24au">
+          <End Type="ToyShopModel.AdvCategory" Role="AdvCategory" Multiplicity="0..1" />
+          <End Type="ToyShopModel.Adv24au" Role="Adv24au" Multiplicity="*" />
+        </Association>
+        <Association Name="MarketplaceAdvCategory">
+          <End Type="ToyShopModel.Marketplace" Role="Marketplace" Multiplicity="1" />
+          <End Type="ToyShopModel.AdvCategory" Role="AdvCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductCategoryProductCategory">
+          <End Type="ToyShopModel.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+          <End Type="ToyShopModel.ProductCategory" Role="ProductCategory1" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductCategoryProduct">
+          <End Type="ToyShopModel.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+          <End Type="ToyShopModel.Product" Role="Product" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductCategoryAdvCategory">
+          <End Type="ToyShopModel.ProductCategory" Role="ProductCategory" Multiplicity="*" />
+          <End Type="ToyShopModel.AdvCategory" Role="AdvCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="AdvCategoryAdvCategory">
+          <End Type="ToyShopModel.AdvCategory" Role="AdvCategory" Multiplicity="0..1" />
+          <End Type="ToyShopModel.AdvCategory" Role="AdvCategory1" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Order" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="SourcePath" Nullable="true" />
+          <NavigationProperty Name="Versions" Relationship="ToyShopModel.ProductImageProductImageVersion" FromRole="ProductImage" ToRole="ProductImageVersion" />
+          <NavigationProperty Name="CurrentVersion" Relationship="ToyShopModel.ProductImageVersionProductImage" FromRole="ProductImage" ToRole="ProductImageVersion" />
+          <NavigationProperty Name="Product" Relationship="ToyShopModel.ProductProductImage" FromRole="ProductImage" ToRole="Product" />
+          <Property Type="Boolean" Name="UseSource" Nullable="false" DefaultValue="false" />
+          <Property Type="Boolean" Name="IsNoImage" Nullable="false" DefaultValue="False" />
+          <Property Type="Int32" Name="PricePosition" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="AdvImages" Relationship="ToyShopModel.ProductImageAdvImage" FromRole="ProductImage" ToRole="AdvImage" />
+        </EntityType>
+        <EntityType Name="ProductImageVersion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="Decimal" Name="PriceNew" Nullable="false" Scale="2" />
+          <Property Type="Decimal" Name="PriceOld" Nullable="false" Scale="2" />
+          <Property Type="String" Name="Path" Nullable="false" />
+          <NavigationProperty Name="ProductImage" Relationship="ToyShopModel.ProductImageProductImageVersion" FromRole="ProductImageVersion" ToRole="ProductImage" />
+          <Property Type="Int32" Name="Style" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="AdvImageVersions" Relationship="ToyShopModel.ProductImageVersionAdvImageVersion" FromRole="ProductImageVersion" ToRole="AdvImageVersion" />
+        </EntityType>
+        <Association Name="ProductImageProductImageVersion">
+          <End Type="ToyShopModel.ProductImage" Role="ProductImage" Multiplicity="1" />
+          <End Type="ToyShopModel.ProductImageVersion" Role="ProductImageVersion" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductImageVersionProductImage">
+          <End Type="ToyShopModel.ProductImageVersion" Role="ProductImageVersion" Multiplicity="0..1" />
+          <End Type="ToyShopModel.ProductImage" Role="ProductImage" Multiplicity="0..1" />
+        </Association>
+        <Association Name="ProductProductImage">
+          <End Type="ToyShopModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="ToyShopModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+        </Association>
+        <EntityType Name="AdvImageVersion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Data" Nullable="false" DefaultValue="" />
+          <NavigationProperty Name="ProductImageVersion" Relationship="ToyShopModel.ProductImageVersionAdvImageVersion" FromRole="AdvImageVersion" ToRole="ProductImageVersion" />
+          <NavigationProperty Name="AdvImage" Relationship="ToyShopModel.AdvImageAdvImageVersion" FromRole="AdvImageVersion" ToRole="AdvImage" />
+        </EntityType>
+        <Association Name="ProductImageVersionAdvImageVersion">
+          <End Type="ToyShopModel.ProductImageVersion" Role="ProductImageVersion" Multiplicity="1" />
+          <End Type="ToyShopModel.AdvImageVersion" Role="AdvImageVersion" Multiplicity="*" />
+        </Association>
+        <EntityType Name="AdvImage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ProductImage" Relationship="ToyShopModel.ProductImageAdvImage" FromRole="AdvImage" ToRole="ProductImage" />
+          <Property Type="Int32" Name="Order" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="Adv24au" Relationship="ToyShopModel.Adv24auAdvImage" FromRole="AdvImage" ToRole="Adv24au" />
+          <NavigationProperty Name="Versions" Relationship="ToyShopModel.AdvImageAdvImageVersion" FromRole="AdvImage" ToRole="AdvImageVersion" />
+          <NavigationProperty Name="CurrentVersion" Relationship="ToyShopModel.AdvImageVersionAdvImage" FromRole="AdvImage" ToRole="AdvImageVersion" />
+        </EntityType>
+        <Association Name="ProductImageAdvImage">
+          <End Type="ToyShopModel.ProductImage" Role="ProductImage" Multiplicity="1" />
+          <End Type="ToyShopModel.AdvImage" Role="AdvImage" Multiplicity="*" />
+        </Association>
+        <Association Name="Adv24auAdvImage">
+          <End Type="ToyShopModel.Adv24au" Role="Adv24au" Multiplicity="1" />
+          <End Type="ToyShopModel.AdvImage" Role="AdvImage" Multiplicity="*" />
+        </Association>
+        <Association Name="AdvImageAdvImageVersion">
+          <End Type="ToyShopModel.AdvImage" Role="AdvImage" Multiplicity="1" />
+          <End Type="ToyShopModel.AdvImageVersion" Role="AdvImageVersion" Multiplicity="*" />
+        </Association>
+        <Association Name="AdvImageVersionAdvImage">
+          <End Type="ToyShopModel.AdvImageVersion" Role="AdvImageVersion" Multiplicity="0..1" />
+          <End Type="ToyShopModel.AdvImage" Role="AdvImage" Multiplicity="0..1" />
+        </Association>
+        <Association Name="BegemotProductProduct">
+          <End Type="ToyShopModel.BegemotProduct" Role="BegemotProduct" Multiplicity="0..1" />
+          <End Type="ToyShopModel.Product" Role="Product" Multiplicity="0..1" />
+        </Association>
+        <Association Name="BegemotProductBegemotSalePrice">
+          <End Type="ToyShopModel.BegemotProduct" Role="BegemotProduct" Multiplicity="0..1" />
+          <End Type="ToyShopModel.BegemotSalePrice" Role="BegemotSalePrice" Multiplicity="*" />
+        </Association>
+        <Association Name="BegemotProductBegemotPriceHistory">
+          <End Type="ToyShopModel.BegemotProduct" Role="BegemotProduct" Multiplicity="0..1" />
+          <End Type="ToyShopModel.BegemotPriceHistory" Role="BegemotPriceHistory" Multiplicity="*" />
+        </Association>
+        <Association Name="BegemotProductBegemotCountHistory">
+          <End Type="ToyShopModel.BegemotProduct" Role="BegemotProduct" Multiplicity="0..1" />
+          <End Type="ToyShopModel.BegemotCountHistory" Role="BegemotCountHistory" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ToyShopModelStoreContainer" CdmEntityContainer="ToyShopModelContainer">
+    <EntitySetMapping Name="BegemotProductSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.BegemotProduct)">
+        <MappingFragment StoreEntitySet="BegemotProductSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Group1" ColumnName="Group1" />
+          <ScalarProperty Name="Group2" ColumnName="Group2" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="NDS" ColumnName="NDS" />
+          <ScalarProperty Name="CountPerBlock" ColumnName="CountPerBlock" />
+          <ScalarProperty Name="CountPerBox" ColumnName="CountPerBox" />
+          <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+          <ScalarProperty Name="WholeSalePrice" ColumnName="WholeSalePrice" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Descrption" ColumnName="Descrption" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CopyInfo" ColumnName="CopyInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BegemotPriceHistorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.BegemotPriceHistory)">
+        <MappingFragment StoreEntitySet="BegemotPriceHistorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+          <ScalarProperty Name="WholeSalePrice" ColumnName="WholeSalePrice" />
+          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BegemotCountHistorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.BegemotCountHistory)">
+        <MappingFragment StoreEntitySet="BegemotCountHistorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BegemotSaleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.BegemotSale)">
+        <MappingFragment StoreEntitySet="BegemotSaleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateStop" ColumnName="DateStop" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BegemotSalePriceSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.BegemotSalePrice)">
+        <MappingFragment StoreEntitySet="BegemotSalePriceSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+          <ScalarProperty Name="WholeSalePrice" ColumnName="WholeSalePrice" />
+          <ScalarProperty Name="RetailPriceOld" ColumnName="RetailPriceOld" />
+          <ScalarProperty Name="WholeSalePriceOld" ColumnName="WholeSalePriceOld" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.Product)">
+        <MappingFragment StoreEntitySet="ProductSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PriceOld" ColumnName="PriceOld" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ImgPricePosition" ColumnName="ImgPricePosition" />
+          <ScalarProperty Name="BRetailPrice" ColumnName="BRetailPrice" />
+          <ScalarProperty Name="BWholeSalePrice" ColumnName="BWholeSalePrice" />
+          <ScalarProperty Name="BCount" ColumnName="BCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adv24auSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.Adv24au)">
+        <MappingFragment StoreEntitySet="Adv24auSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="DateExpire" ColumnName="DateExpire" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="MrkCategory" ColumnName="MrkCategory" />
+          <ScalarProperty Name="LinkRewrite" ColumnName="LinkRewrite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StyleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.Style)">
+        <MappingFragment StoreEntitySet="StyleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Footer" ColumnName="Footer" />
+          <ScalarProperty Name="ShowCaseStyle" ColumnName="ShowCaseStyle" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DefMrkCategory" ColumnName="DefMrkCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.Sale)">
+        <MappingFragment StoreEntitySet="SaleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateExpire" ColumnName="DateExpire" />
+          <ScalarProperty Name="Algoritm" ColumnName="Algoritm" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MarginMin" ColumnName="MarginMin" />
+          <ScalarProperty Name="MarginMax" ColumnName="MarginMax" />
+          <ScalarProperty Name="MarginToWholesale" ColumnName="MarginToWholesale" />
+          <ScalarProperty Name="DescountToRetail" ColumnName="DescountToRetail" />
+          <ScalarProperty Name="UseMaxResult" ColumnName="UseMaxResult" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarketplaceSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.Marketplace)">
+        <MappingFragment StoreEntitySet="MarketplaceSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.ProductCategory)">
+        <MappingFragment StoreEntitySet="ProductCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.AdvCategory)">
+        <MappingFragment StoreEntitySet="AdvCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="LinkRewrite" ColumnName="LinkRewrite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.ProductImage)">
+        <MappingFragment StoreEntitySet="ProductImageSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="SourcePath" ColumnName="SourcePath" />
+          <ScalarProperty Name="UseSource" ColumnName="UseSource" />
+          <ScalarProperty Name="IsNoImage" ColumnName="IsNoImage" />
+          <ScalarProperty Name="PricePosition" ColumnName="PricePosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImageVersionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.ProductImageVersion)">
+        <MappingFragment StoreEntitySet="ProductImageVersionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PriceNew" ColumnName="PriceNew" />
+          <ScalarProperty Name="PriceOld" ColumnName="PriceOld" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvImageVersionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.AdvImageVersion)">
+        <MappingFragment StoreEntitySet="AdvImageVersionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvImageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ToyShopModel.AdvImage)">
+        <MappingFragment StoreEntitySet="AdvImageSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="BegemotSaleBegemotSalePrice" TypeName="ToyShopModel.BegemotSaleBegemotSalePrice" StoreEntitySet="BegemotSalePriceSet">
+      <EndProperty Name="BegemotSale">
+        <ScalarProperty Name="Id" ColumnName="BegemotSale_Id" />
+      </EndProperty>
+      <EndProperty Name="BegemotSalePrice">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductAdv24au" TypeName="ToyShopModel.ProductAdv24au" StoreEntitySet="Adv24auSet">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="Adv24au">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StyleProduct" TypeName="ToyShopModel.StyleProduct" StoreEntitySet="StyleProduct">
+      <EndProperty Name="Style">
+        <ScalarProperty Name="Id" ColumnName="SpecialStyle_Id" />
+      </EndProperty>
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Products_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductSale" TypeName="ToyShopModel.ProductSale" StoreEntitySet="ProductSale">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Products_Id" />
+      </EndProperty>
+      <EndProperty Name="Sale">
+        <ScalarProperty Name="Id" ColumnName="Sales_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StyleSale" TypeName="ToyShopModel.StyleSale" StoreEntitySet="SaleSet">
+      <EndProperty Name="Style">
+        <ScalarProperty Name="Id" ColumnName="Style_Id" />
+      </EndProperty>
+      <EndProperty Name="Sale">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Style_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StyleMarketplace" TypeName="ToyShopModel.StyleMarketplace" StoreEntitySet="StyleSet">
+      <EndProperty Name="Marketplace">
+        <ScalarProperty Name="Id" ColumnName="Marketplace_Id" />
+      </EndProperty>
+      <EndProperty Name="Style">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Marketplace_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MarketplaceAdv24au" TypeName="ToyShopModel.MarketplaceAdv24au" StoreEntitySet="Adv24auSet">
+      <EndProperty Name="Marketplace">
+        <ScalarProperty Name="Id" ColumnName="Marketplace_Id" />
+      </EndProperty>
+      <EndProperty Name="Adv24au">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Marketplace_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdvCategoryAdv24au" TypeName="ToyShopModel.AdvCategoryAdv24au" StoreEntitySet="Adv24auSet">
+      <EndProperty Name="AdvCategory">
+        <ScalarProperty Name="Id" ColumnName="Category_Id" />
+      </EndProperty>
+      <EndProperty Name="Adv24au">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Category_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MarketplaceAdvCategory" TypeName="ToyShopModel.MarketplaceAdvCategory" StoreEntitySet="AdvCategorySet">
+      <EndProperty Name="Marketplace">
+        <ScalarProperty Name="Id" ColumnName="Marketplace_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvCategory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductCategoryProductCategory" TypeName="ToyShopModel.ProductCategoryProductCategory" StoreEntitySet="ProductCategorySet">
+      <EndProperty Name="ProductCategory">
+        <ScalarProperty Name="Id" ColumnName="Parent_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductCategory1">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Parent_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductCategoryProduct" TypeName="ToyShopModel.ProductCategoryProduct" StoreEntitySet="ProductSet">
+      <EndProperty Name="ProductCategory">
+        <ScalarProperty Name="Id" ColumnName="Category_Id" />
+      </EndProperty>
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Category_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductCategoryAdvCategory" TypeName="ToyShopModel.ProductCategoryAdvCategory" StoreEntitySet="ProductCategoryAdvCategory">
+      <EndProperty Name="ProductCategory">
+        <ScalarProperty Name="Id" ColumnName="ProductCategories_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvCategory">
+        <ScalarProperty Name="Id" ColumnName="AdvCategories_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdvCategoryAdvCategory" TypeName="ToyShopModel.AdvCategoryAdvCategory" StoreEntitySet="AdvCategorySet">
+      <EndProperty Name="AdvCategory">
+        <ScalarProperty Name="Id" ColumnName="Parent_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvCategory1">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Parent_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductImageProductImageVersion" TypeName="ToyShopModel.ProductImageProductImageVersion" StoreEntitySet="ProductImageVersionSet">
+      <EndProperty Name="ProductImage">
+        <ScalarProperty Name="Id" ColumnName="ProductImage_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductImageVersion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductImageVersionProductImage" TypeName="ToyShopModel.ProductImageVersionProductImage" StoreEntitySet="ProductImageSet">
+      <EndProperty Name="ProductImageVersion">
+        <ScalarProperty Name="Id" ColumnName="CurrentVersion_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="CurrentVersion_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductProductImage" TypeName="ToyShopModel.ProductProductImage" StoreEntitySet="ProductImageSet">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductImageVersionAdvImageVersion" TypeName="ToyShopModel.ProductImageVersionAdvImageVersion" StoreEntitySet="AdvImageVersionSet">
+      <EndProperty Name="ProductImageVersion">
+        <ScalarProperty Name="Id" ColumnName="ProductImageVersion_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvImageVersion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductImageAdvImage" TypeName="ToyShopModel.ProductImageAdvImage" StoreEntitySet="AdvImageSet">
+      <EndProperty Name="ProductImage">
+        <ScalarProperty Name="Id" ColumnName="ProductImage_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Adv24auAdvImage" TypeName="ToyShopModel.Adv24auAdvImage" StoreEntitySet="AdvImageSet">
+      <EndProperty Name="Adv24au">
+        <ScalarProperty Name="Id" ColumnName="Adv24au_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdvImageAdvImageVersion" TypeName="ToyShopModel.AdvImageAdvImageVersion" StoreEntitySet="AdvImageVersionSet">
+      <EndProperty Name="AdvImage">
+        <ScalarProperty Name="Id" ColumnName="AdvImage_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvImageVersion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdvImageVersionAdvImage" TypeName="ToyShopModel.AdvImageVersionAdvImage" StoreEntitySet="AdvImageSet">
+      <EndProperty Name="AdvImageVersion">
+        <ScalarProperty Name="Id" ColumnName="CurrentVersion_Id" />
+      </EndProperty>
+      <EndProperty Name="AdvImage">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="CurrentVersion_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BegemotProductProduct" TypeName="ToyShopModel.BegemotProductProduct" StoreEntitySet="ProductSet">
+      <EndProperty Name="BegemotProduct">
+        <ScalarProperty Name="Id" ColumnName="BegemotProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="BegemotProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BegemotProductBegemotSalePrice" TypeName="ToyShopModel.BegemotProductBegemotSalePrice" StoreEntitySet="BegemotSalePriceSet">
+      <EndProperty Name="BegemotProduct">
+        <ScalarProperty Name="Id" ColumnName="BegemotProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="BegemotSalePrice">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="BegemotProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BegemotProductBegemotPriceHistory" TypeName="ToyShopModel.BegemotProductBegemotPriceHistory" StoreEntitySet="BegemotPriceHistorySet">
+      <EndProperty Name="BegemotProduct">
+        <ScalarProperty Name="Id" ColumnName="BegemotProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="BegemotPriceHistory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="BegemotProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BegemotProductBegemotCountHistory" TypeName="ToyShopModel.BegemotProductBegemotCountHistory" StoreEntitySet="BegemotCountHistorySet">
+      <EndProperty Name="BegemotProduct">
+        <ScalarProperty Name="Id" ColumnName="BegemotProduct_Id" />
+      </EndProperty>
+      <EndProperty Name="BegemotCountHistory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="BegemotProduct_Id" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
